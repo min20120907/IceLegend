@@ -2,6 +2,7 @@ package com.deanveloper.gui;
 
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.util.Consumer;
 
 public class GUIItem {
     private Consumer<InventoryClickEvent> invClick;

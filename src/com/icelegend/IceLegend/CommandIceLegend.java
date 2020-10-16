@@ -15,12 +15,12 @@ public class CommandIceLegend implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
-            Player player = (Player) sender;
+            //Player player = (Player) sender;
             // Here we need to give items to our player
             ItemStack redstone = new ItemStack(Material.REDSTONE);
             GUIWindow gui = new GUIWindow("Get some redstone!", 3);
             GUIItem guiItem = new GUIItem(redstone, event -> event.getWhoClicked().getInventory().addItem(redstone));
-
+            
             gui.setItem(4, 1, guiItem);
         }
 
