@@ -1,4 +1,4 @@
-package com.icelegend.IceLegend;
+package com.icelegend;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class IceLegend extends JavaPlugin{

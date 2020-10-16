@@ -4,6 +4,6 @@ version: 1.0
 api-version: 1.13
 commands:
    ice:
-      description: Your description
+      description: open UI
       usage: /<command>
-      permission: yourplugin.yourcommandpermission 
+      permission: IceLegend.command.ice 
