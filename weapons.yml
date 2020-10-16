@@ -1,0 +1,13 @@
+weapons:
+   name: "redstone sticks"
+   properties:
+      - AProp
+      - BProp
+      - CProp
+   craftRecipe:
+      - minecraft:redstone 1
+      - minecraft:stick 5
+   specialEffects:
+      - sleepy
+      - gotPower
+   lore: "Red gives me power!"
