@@ -1,0 +1,10 @@
+Gem:
+  Test: #寶石ID
+    Name: 測試 #寶石名字
+    Material: diamond #寶石材質
+    Data: 0 #寶石材質Data
+    Durability: 0 #寶石耐久度
+    Attribute: #寶石加成數值
+    - attack:10
+    Lore: #寶石敘述
+    - '測試品'

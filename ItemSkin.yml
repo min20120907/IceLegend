@@ -1,0 +1,8 @@
+Skin: 
+  Test:
+    Name: 測試造型
+    material: diamond_block #造型鑲嵌後實際長相
+    data: 0 #寶石材質CustomModelData
+    Durability: 0 #寶石耐久度
+    Lore: #造型敘述
+    - '測試造型'
