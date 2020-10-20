@@ -20,12 +20,12 @@ public class IceLegend extends JavaPlugin{
     	}
     	
         this.getCommand("ice").setExecutor(new CommandIceLegend());
-        getLogger().info(msg_config.getString("loadplugin"));
+        getLogger().info(format(msg_config.getString("loadplugin")));
     }
     // Fired when plugin is disabled
     @Override
     public void onDisable() {
-    	getLogger().info(msg_config.getString("disableplugin"));
+    	getLogger().info(format(msg_config.getString("disableplugin")));
     }
     //return the configurations
     public FileConfiguration getMessagesConfig() {
