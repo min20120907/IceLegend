@@ -1,5 +1,6 @@
 package com.icelegend;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 
 import org.bukkit.Bukkit;
@@ -8,7 +9,10 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
@@ -20,14 +24,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 @SuppressWarnings("unused")
 public class CommandIceLegend implements CommandExecutor {
 
-	
-
+	private IceLegend ic;
+	private File default_ = new File(ic.getDataFolder(), "UIList.yml");
+	FileConfiguration config = YamlConfiguration.loadConfiguration(default_);
 	@Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
 			Player player = (Player) sender;
-			Inventory gui = Bukkit.createInventory(null, 9,ChatColor.AQUA + "冰晶系統 "+ ChatColor.DARK_GRAY + ">> "+ "FREE DIRT" );
-			   
+			
+			/*Inventory gui = Bukkit.createInventory(null, 9,ChatColor.AQUA + "冰晶系統 "+ ChatColor.DARK_GRAY + ">> "+ config.getString("title") );
+			
 
 	        //This is where you create the item
 	        ItemStack survival = new ItemStack (Material.DIRT);
@@ -50,8 +56,9 @@ public class CommandIceLegend implements CommandExecutor {
 	        gui.setItem(8, survival);
 	       
 	        //This opens the inventory
-	        player.openInventory(gui);
-        	sender.sendMessage("[冰晶傳說] 打開界面中 by "+player.getDisplayName());
+	        player.openInventory(gui);*/
+			
+        	sender.sendMessage("&b[冰晶傳說] &8>> &f打開界面中 by "+player.getDisplayName());
 
  
             

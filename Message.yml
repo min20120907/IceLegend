@@ -1,16 +1,18 @@
-Prefix: '&b冰晶系統 &8>>&f'
+prefix: '&b冰晶系統 &8››&f'
 Message:
   Command:
     help: '%prefix% &e/icelegend help &f獲得指令'
     skilltreegui: '%prefix% &f開啟天賦樹介面' #
     attributegui: '%prefix% &f開啟屬性點介面' 
     combineskillgui: '%prefix% &f開啟組合技能介面' 
-    classgui: '%prefix% &f開啟光能數值&技能介面' 
+    classgui: '%prefix% &f開啟光能數值\&技能介面' 
     selectclassgui: '%prefix% &f開啟選擇光能介面' 
     itemcombinegui: '%prefix% &f開啟組裝物品介面' 
     bindskillgui: '%prefix% &f開啟綁定技能介面' 
     itemskincombinegui: '%prefix% 開啟造型綁定介面'
     gemcombinegui: '%prefix% 開啟寶石鑲嵌介面'
+    skillbar: '%prefix%  開/關閉技能快捷欄'
+    reload: '%prefix%  檔案重新讀取'
   Combineitemsuccess: '%prefix% &f組裝武器完成'
   skincombineuccess: '%prefix% &f成功綁定造型到%weapon%'
   Gemsuccess: '%prefix% &f鑲嵌寶石成功'
@@ -35,8 +37,10 @@ Message:
   getskillitem: '%prefix% &f你獲得了%skillitem%'
   getgem: '%prefix% &f你獲得了%gem%'
   getskin: '%prefix% &f你獲得了%skin%'  
+  changeweaponname: '%prefix% 你花費了1000白銀錠為你的物品改名了'
   #以下為OP指令
   nopermission: '%prefix% &c你沒有權限使用此命令' 
+  nopermissionclass: '%prefix% &c你沒有權限使用此光能' 
   opunlockclasstoplayer: '%prefix% 你幫助%player%解鎖了%class%'
   giveskillpoint: '%prefix% 你給予了%prefix%天賦點'
   giveattributepoint: '%prefix% 你給予了%player%屬性點'
@@ -45,3 +49,5 @@ Message:
   giveskillitem: '%prefix% &f你給予了%player%%skillitem%'
   givegem: '%prefix% &f你給予了%player%%gem%'
   giveskin: '%prefix% &f你給予了%player%%skin%'
+  #以下爲系統指令
+  opensuccess: '%prefix% '

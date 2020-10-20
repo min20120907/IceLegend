@@ -23,7 +23,7 @@ Attribute: #名稱定義
  poison_chance: '中毒效果機率'
  poison_damage: '中毒效果傷害'
  Confuse_chance: '噁心效果機率'
- Confuse_level: '噁心效果等級'
+ Confuse_level: '噁心效果等級
  Float_chance: '漂浮效果機率'
  Float_level: '漂浮效果等級'
  Burn_chance: '著火機率'

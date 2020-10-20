@@ -6,4 +6,48 @@ commands:
    ice:
       description: open UI
       usage: /<command>
-      permission: IceLegend.command.ice 
+      permission: IceLegend.command.ice
+   icelegend:
+      description: get the command guide
+      usage: /<command>
+      permission: IceLegend.command.help
+   skilltreegui:
+      description: open skill tree interface
+      usage: /<command>
+      permission: IceLegend.command.skilltree
+   attributegui:
+      description: open attribute interface
+      usage: /<command>
+      permission: IceLegend.command.attributegui
+   combineskillgui:
+      description: open combine skill interface
+      usage: /<command>
+      permission: IceLegend.command.combineskillgui
+   classgui:
+      description: open class gui
+      usage: /<command>
+      permission: IceLegend.command.classgui
+   selectclassgui:
+      description: open select class interface
+      usage: /<command>
+      permission: IceLegend.command.selectclassgui
+   itemcombinegui:
+      description: open item combine gui
+      usage: /<command>
+      permission: IceLegend.command.item
+   bindskillgui:
+      description: open binding skill gui
+      usage: /<command>
+      permission: IceLegend.command.bindskillgui
+   itemskincombinegui:
+      description: open item combine interface
+      usage: /<command>
+      permission: IceLegend.command.itemcombinegui
+   gemcombinegui:
+      description: open gem combine interface
+      usage: /<command>
+      permission: IceLegend.command.gemcombinegui
+   skillbar:
+      description: open gem combine interface
+      usage: /<command>
+      permission: IceLegend.command.skillbar

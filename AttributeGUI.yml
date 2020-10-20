@@ -1,0 +1,9 @@
+Test: #圖標ID
+  Name: '&e'
+  Attribute: '' #屬性類別health mana speed armor critical_chance critical_rate attack Attack_speed
+  LevelUpadd: 1 #每等增加多少屬性值
+  NeedPoint: 0 #每等需要的屬性點 
+  Maxlevel: 0 #最高等級
+  Material: White_stained_glass_pane
+  Locate: '1,2,3,4,5,6,7,8,9,10,12,14,16,18,19,20,21,22,23,24,25,26,27,28,30,32,34,36,37,38,39,40,41,42,43,44,45'
+  

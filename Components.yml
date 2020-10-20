@@ -2,13 +2,12 @@
 Example:
   Name: 火焰 #零件名稱
   Type: Melee #物品零件種類 分為Melee近戰 Magic 魔法 Shoot 射擊 Defence 防禦 (部分數值將僅限不同種類武器讀取)
+  Locate: 1 #1~8 為合成時部位放置的位置 詳見ItemCombineGui.yml 
   Series: 火焰   #零件系列 組裝武器時偵測此零件系列 組裝出來的武器敘述將採用所有參與組裝的零件中 系列參與最多者之預設敘述 參考SeriesLore.yml
   Material: redstone #零件材質 #組裝後武器材質由武器種類ItemMaterial.yml隨機出現
   Durability: 0 #物品耐久 0為完整
   Data: 0 #CustomModelData 材質Data 0為預設
-  Lore: #可設定零件敘述 組裝成零件時將會自動隱藏
-  - '我是預設的XD'
-  Attribute: 
+  Attribute: #attribute將會作為敘述直接顯示在零件以及後續組裝的武器上
   #設定零件數值 組裝時將依照組裝零件順序 依序將預設數值名稱及數值排上敘述 數值敘述名稱參考 AttributeName.yml 
   #(常數)-直接係數 (百分比)每100%為觸發一次額外傷害的機率 最高無上限 400%=打4次額外100%傷害(可相容爆擊機率)(未標註者皆可突破100%百分比) #如有註解最高N% 為所有裝備武器加總後不能超過N% 超過則視同N%
   - attack:10 #攻擊力(通用)(常數)
@@ -66,5 +65,7 @@ Example:
   - burn_defence:10 #著火減傷(防禦)(百分比)(此為最高80%)(直接減傷)
   - float_defence:10 #漂浮韌性(防禦)(百分比)(此為最高80%)(減少持續時間)
   - freeze_defence:10 #凍結韌性(防禦)(百分比)(此為最高80%)(減少持續時間)
+  Lore: #可設定零件敘述 組裝成零件時將會自動隱藏 與Attribute所提供的敘述不一樣
+  - '我是預設的XD'
   Gem: #寶石鑲嵌
   - slots:n #組裝武器後增加N個鑲嵌格子 鑲嵌格敘述將會放置在武器模板上 詳見WeaponTemplate.yml

@@ -1,0 +1,24 @@
+Test: #光能ID
+  Name: '測試光能' #光能名稱
+  Material: 'diamond' #顯示於介面的圖標
+  Data: '0' #圖標CustomModelData的數值
+  Lore: #顯示於光能介面的敘述
+  - ''
+  SkillPoint: 0 #1等天賦點
+  UpSkillPoint: 1 #每等獲得天賦點
+  AttributePoint: 0 #1等屬性點
+  UpAttributePoint: 1 #每等獲得屬性點
+  Attribute: #預設體質 屬性點介面的8大屬性
+    health: 20.0
+    mana: 20.0
+    speed: 1.0
+    armor: 1
+    critical_chance: 0
+    critical_rate: 0
+    attack: 1
+    Attack_speed: 1.0
+  LevelUpRate: 0.1 #每等提升基礎數值倍率 0.1= 增加10%
+  Skill: #預設技能 不能換技能槽或是換掉 #'test1'為技能名稱 :1 為技能格位置 1~6
+    test1:1
+    test2:2
+  Permission: class.test #none為無權限 權限節點可隨意設定

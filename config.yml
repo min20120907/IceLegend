@@ -1,0 +1,104 @@
+Version: 1.0
+Prefix: '&b冰晶系統 &8››'
+Saving: 
+  auto-save: 'true'
+  minutes: '30'
+  sql-database: 'false'
+  sql-details: 
+    host: 'localhost'
+    port: '54321'
+    database: 'plugins'
+    username: 'username'
+    password: 'password'
+    delay: '0'
+
+Class: #光能相關數值
+  ClassSlot: 3 #光能預設欄位數量
+  MaxClassSlot: 32 #光能最多欄位數量
+  Skillpoint: 1 #1等預設點數
+  Attributepoint: 1 #1等預設點數
+  MaxLevel: 30 #所有光能最高等級
+  ReturnLife: 5 #最大滿等轉生次數
+  Attribute: #沒有使用光能時的數值
+    health: 20.0
+    mana: 20.0
+    speed: 1.0
+    armor: 1
+    critical_chance: 0
+    critical_rate: 0
+    attack: 1
+    Attack_speed: 1.0
+  SameClassRepeatGetPoint: false #是否讓第二架重複的光能練等能獲得屬性點
+  HealthScale: 20 #血量條幾顆心呈現
+  Mana: #魔力設定
+  enabled: 'true'
+  regen: '1' #每秒回復速率
+  Exp: 200(1.105^(level-1)) #每等升級所需經驗值
+  MobExp: #擊殺怪物獲得的經驗 可搭配Mythicmobs獲得額外經驗 #沒寫上去的幫我加上去
+    blaze: '10'
+    cavespider: '5'
+    creeper: '3'
+    elderguardian: '10'
+    enderdragon: '10'
+    enderman: '5'
+    endermite: '3'
+    evoker: '10'
+    ghast: '5'
+    giant: '20'
+    guardian: '10'
+    husk: '2'
+    irongolem: '10'
+    magmacube: '1'
+    piglin: '5'
+    player: '5'
+    shulker: '5'
+    silverfish: '2'
+    skeleton: '3'
+    slime: '1'
+    spider: '3'
+    stray: '5'
+    vex: '3'
+    vindicator: '5'
+    witch: '3'
+    wither: '30'
+    witherskeleton: '5'
+    zombie: '2'
+    phantom: '3'
+    ravager: '15'
+    pillager: '5'
+    piglin_brute: '15' 
+Skill: 
+  exp-message-enabled: 'true'
+  level-message-enabled: 'true'
+  enabled: 'true' #快捷欄
+  show-cooldown: 'true'  #顯示冷卻 
+  empty-icon:  #無技能的預設物品
+    material: '160'
+    data: '7'
+    text: '&7尚無技能 &4(請勿放東西)'
+
+  layout: #可放技能的快捷欄 1~6
+    1: 
+      skill: 'true'
+      locked: 'true'
+    2: 
+      skill: 'true'
+      locked: 'true'
+    3: 
+      skill: 'true'
+      locked: 'true'
+    4: 
+      skill: 'true'
+      locked: 'true'
+    5: 
+      skill: 'true'
+      locked: 'true'
+    6: 
+      skill: 'true'
+      locked: 'true'
+Weapon: #武器
+  Unbreakble: true #預設所有武器都無耐久
+  GemSlot: 4 #武器寶石槽上限
+  GemLore: '  &a< 鑲嵌寶石槽 >' #寶石槽敘述
+  CustomName: true #是否讓玩家使用武器更名指令
+  CustomNameCost: 1000 #武器更名花費 支持essential

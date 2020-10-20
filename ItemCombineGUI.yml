@@ -1,0 +1,65 @@
+Glass01: #圖標ID 
+  Name: '&a'
+  Use: 'none' #none為無功能 
+  Material: Black_stained_glass_pane
+  Locate: '1,2,3,4,5,6,7,8,9,10,15,16,17,18,19,20,21,22,23,24,25,27,28,33,34,35,36,38,39,40,41,42,43,44'
+  Lore:
+  - ''
+BACK01: #圖標ID 
+  Name: '&c離開介面'
+  Use: 'BACK' #back為退出介面 
+  Material: RED_stained_glass_pane
+  Locate: '37'
+  Lore:
+  - ''
+YES01: #圖標ID 
+  Name: '&a確認合成'
+  Use: 'YES' #YES為確認合成
+  Material: GREEN_stained_glass_pane
+  Locate: '45'
+locate01: #圖標ID 
+  Name: '請放置零件於此處'
+  Use: 'component.locate1' #零件locate1的位置 可放上零件後
+  Material: GRAY_stained_glass_pane
+  Locate: '20'
+  Lore:
+  - '&7可放置零件類型:'
+  - '&c刀刃'
+locate02: #圖標ID 
+  Name: ''
+  Use: 'component.locate2' #零件locate2的位置 可放上零件後
+  Material: GRAY_stained_glass_pane
+  Locate: '21'
+locate03: #圖標ID 
+  Name: ''
+  Use: 'component.locate3' #零件locate3的位置 可放上零件後
+  Material: GRAY_stained_glass_pane
+  Locate: '21'
+locate04: #圖標ID 
+  Name: ''
+  Use: 'component.locate4' #零件locate4的位置 可放上零件後
+  Material: GRAY_stained_glass_pane
+  Locate: '22'
+locate01: #圖標ID 
+  Name: ''
+  Use: 'component.locate5' #零件locate5的位置 可放上零件後
+  Material: GRAY_stained_glass_pane
+  Locate: '29'
+locate01: #圖標ID 
+  Name: ''
+  Use: 'component.locate6' #零件locate6的位置 可放上零件後
+  Material: GRAY_stained_glass_pane
+  Locate: '30'
+locate01: #圖標ID 
+  Name: ''
+  Use: 'component.locate7' #零件locate7的位置 可放上零件後
+  Material: GRAY_stained_glass_pane
+  Locate: '31'
+locate01: #圖標ID 
+  Name: ''
+  Use: 'component.locate8' #零件locate8的位置 可放上零件後
+  Material: GRAY_stained_glass_pane
+  Locate: '32'
+
+
+
