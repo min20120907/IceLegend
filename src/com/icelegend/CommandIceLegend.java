@@ -23,10 +23,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 @SuppressWarnings("unused")
 public class CommandIceLegend implements CommandExecutor {
-
-	private IceLegend ic;
-	private File default_ = new File(ic.getDataFolder(), "UIList.yml");
-	FileConfiguration config = YamlConfiguration.loadConfiguration(default_);
+	IceLegend ic;
 	@Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
@@ -58,12 +55,12 @@ public class CommandIceLegend implements CommandExecutor {
 	        //This opens the inventory
 	        player.openInventory(gui);*/
 			
-        	sender.sendMessage("&b[冰晶傳說] &8>> &f打開界面中 by "+player.getDisplayName());
+        	sender.sendMessage(ic.format(ic.getMessagesConfig().getString("Gemsuccess")));
 
  
             
         }else {
-        	sender.sendMessage("[冰晶傳說] 請使用玩家身份使用此指令");
+        	sender.sendMessage(ic.getMessagesConfig().getString("playernotdetected"));
         }
 
         // If the player (or console) uses our command correct, we can return true
