@@ -50,4 +50,6 @@ Message:
   givegem: '%prefix% &f你給予了%player%%gem%'
   giveskin: '%prefix% &f你給予了%player%%skin%'
   #以下爲系統指令
-  opensuccess: '%prefix% '
+  loadplugin: '%prefix% &f插件載入中...'
+  loadsuccess: '%prefix% &f插件載入成功！'
+  disableplugin: '%prefix% &f插件停用中...'
