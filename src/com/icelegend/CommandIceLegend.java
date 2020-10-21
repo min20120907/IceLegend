@@ -24,6 +24,14 @@ import org.bukkit.plugin.java.JavaPlugin;
 @SuppressWarnings("unused")
 public class CommandIceLegend implements CommandExecutor {
 	IceLegend ic;
+	FileConfiguration msg_config;
+	public CommandIceLegend(FileConfiguration msg_config, IceLegend ic) {
+		// TODO Auto-generated constructor stub
+		this.msg_config = msg_config;
+		this.ic = ic;
+	}
+	
+	//String prefix = msg_config.getString("prefix");
 	@Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (sender instanceof Player) {
@@ -55,12 +63,11 @@ public class CommandIceLegend implements CommandExecutor {
 	        //This opens the inventory
 	        player.openInventory(gui);*/
 			
-        	sender.sendMessage(ic.format(ic.getMessagesConfig().getString("Gemsuccess")));
-
+        	sender.sendMessage(ic.format(msg_config.getString("Messages.Gemsuccess")));
  
             
         }else {
-        	sender.sendMessage(ic.getMessagesConfig().getString("playernotdetected"));
+        	sender.sendMessage(ic.format(msg_config.getString("Messages.Gemfailed")));
         }
 
         // If the player (or console) uses our command correct, we can return true

@@ -1,5 +1,5 @@
 prefix: '&b冰晶系統 &8››&f'
-Message:
+Messages:
   Command:
     help: '%prefix% &e/icelegend help &f獲得指令'
     skilltreegui: '%prefix% &f開啟天賦樹介面' #
@@ -16,7 +16,7 @@ Message:
   Combineitemsuccess: '%prefix% &f組裝武器完成'
   skincombineuccess: '%prefix% &f成功綁定造型到%weapon%'
   Gemsuccess: '%prefix% &f鑲嵌寶石成功'
-  Gemsuccess: '%prefix% &f鑲嵌寶石失敗'
+  Gemfailed: '%prefix% &f鑲嵌寶石失敗'
   Combineskillsuccess: '%prefix% &f合成技能成功'
   Combineskillfail: '%prefix% &f合成技能失敗'  
   unlockclass: '%prefix% &f成功解鎖新光能'

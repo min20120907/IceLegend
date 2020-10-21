@@ -1,11 +1,13 @@
 package com.icelegend;
 import java.io.File;
 
+import org.apache.commons.lang.StringUtils;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import net.md_5.bungee.api.ChatColor;
+
 
 public class IceLegend extends JavaPlugin{
 	//Messages.yml
@@ -19,13 +21,13 @@ public class IceLegend extends JavaPlugin{
     		saveResource("Messages.yml", false);
     	}
     	
-        this.getCommand("ice").setExecutor(new CommandIceLegend());
-        getLogger().info(format(msg_config.getString("loadplugin")));
+        this.getCommand("ice").setExecutor(new CommandIceLegend(msg_config, this));
+        getLogger().info(format(msg_config.getString("Messages.loadplugin")));
     }
     // Fired when plugin is disabled
     @Override
     public void onDisable() {
-    	getLogger().info(format(msg_config.getString("disableplugin")));
+    	getLogger().info(format(msg_config.getString("Messages.disableplugin")));
     }
     //return the configurations
     public FileConfiguration getMessagesConfig() {
@@ -37,7 +39,9 @@ public class IceLegend extends JavaPlugin{
     }
     // Format the string with color codes
     public String format(String str) {
-    	return ChatColor.translateAlternateColorCodes('&', str);
+    	return ChatColor.translateAlternateColorCodes('&', str.replace(StringUtils.substringBetween(str, "%", "%"), msg_config.getString(StringUtils.substringBetween(str, "%", "%"))).replace("%",""));
     }
+    
+    
     
 }
