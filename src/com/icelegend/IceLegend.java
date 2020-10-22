@@ -10,16 +10,30 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 
 public class IceLegend extends JavaPlugin{
-	//Messages.yml
+	//initialize the yaml files
 	private File msg = new File(this.getDataFolder(), "Messages.yml");
+	private File attr_gui = new File(this.getDataFolder(), "AttributeGUI.yml");
+	private File attr_name = new File(this.getDataFolder(), "AttributeName.yml");
+	private File class_yml = new File(this.getDataFolder(),"Class.yml");
+	private File class_gui = new File(this.getDataFolder(), "ClassGUI.yml");
+	private File components_yml = new File(this.getDataFolder(), "Components.yml");
+	private File gem = new File(this.getDataFolder(),"Gem.yml");
+	private File gem_com = new File(this.getDataFolder(), "GemCombineGUI.yml");
+	private File item_com = new File(this.getDataFolder(), "ItemCombineGUI.yml");
+	private File item_mat = new File(this.getDataFolder(), "ItemMaterial.yml");
+	private File item_skin = new File(this.getDataFolder(), "ItemSkin.yml");
+	private File item_skin_com = new File(this.getDataFolder(), "ItemSkinCombineGUI.yml");
+	private File item_tem = new File(this.getDataFolder(), "ItemTemplate.yml");
+	private File placeholder = new File(this.getDataFolder(), "Placeholder_List.yml");
+	private File series_lore = new File(this.getDataFolder(), "");
+	
 	private FileConfiguration msg_config = YamlConfiguration.loadConfiguration(msg);
 	
     @Override
     public void onEnable() {
         //if the message.yml disappear, generate one.
-    	if(!msg.exists()) {
-    		saveResource("Messages.yml", false);
-    	}
+    	if(!msg.exists()) saveResource("Messages.yml", false);
+    	
     	//initialize the command classes
         this.getCommand("icelegend").setExecutor(new CommandIceLegend(this));
         this.getCommand("skilltreegui").setExecutor(new CommandSkillTreeGUI(this));
