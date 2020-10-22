@@ -23,14 +23,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 @SuppressWarnings("unused")
 public class CommandIceLegend implements CommandExecutor {
-	IceLegend ic;
-	FileConfiguration msg_config;
-	public CommandIceLegend(FileConfiguration msg_config, IceLegend ic) {
+	private IceLegend ic;
+	
+	public CommandIceLegend(IceLegend ic) {
 		// TODO Auto-generated constructor stub
-		this.msg_config = msg_config;
 		this.ic = ic;
 	}
-	
+	private FileConfiguration msg_config = ic.getMessagesConfig();
 	//String prefix = msg_config.getString("prefix");
 	@Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
