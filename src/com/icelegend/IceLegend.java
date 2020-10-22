@@ -45,8 +45,22 @@ public class IceLegend extends JavaPlugin{
 	
     @Override
     public void onEnable() {
-        //if the message.yml disappear, generate one.
+        //if the YAML disappear, generate one.
     	if(!msg.exists()) saveResource("Messages.yml", false);
+    	if(!attr_gui.exists()) saveResource("AttributeGUI.yml", false);
+    	if(!attr_name.exists()) saveResource("AttributeName.yml", false);
+    	if(!class_yml.exists()) saveResource("Class.yml", false);
+    	if(!class_gui.exists()) saveResource("ClassGUI.yml", false);
+    	if(!components_yml.exists()) saveResource("Components.yml", false);
+    	if(!gem.exists()) saveResource("Gem.yml", false);
+    	if(!gem_com.exists()) saveResource("GemCombine.yml", false);
+    	if(!item_com.exists()) saveResource(".yml", false);
+    	if(!item_mat.exists()) saveResource("ItemMaterial.yml", false);
+    	if(!item_skin.exists()) saveResource("ItemSkin.yml", false);
+    	if(!item_skin_com.exists()) saveResource("ItemSkinCombineGUI.yml", false);
+    	if(!item_tem.exists()) saveResource("ItemTemplate.yml", false);
+    	if(!placeholder.exists()) saveResource("Placeholder_List.yml", false);
+    	if(!series_lore.exists()) saveResource("SeriesLore.yml", false);
     	
     	//initialize the command classes
         this.getCommand("icelegend").setExecutor(new CommandIceLegend(this));
