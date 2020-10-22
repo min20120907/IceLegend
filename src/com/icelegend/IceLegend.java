@@ -64,15 +64,15 @@ public class IceLegend extends JavaPlugin{
     	
     	//initialize the command classes
         this.getCommand("icelegend").setExecutor(new CommandIceLegend(this));
-        this.getCommand("skilltreegui").setExecutor(new CommandSkillTreeGUI(this));
+        this.getCommand("skilltreegui").setExecutor(new CommandSkillTreeGUI(this));	
         this.getCommand("attributegui").setExecutor(new CommandAttributeGUI(this));
-        this.getCommand("skilltreegui").setExecutor(new CommandCombineSkillGUI(this));
-        this.getCommand("classgui").setExecutor(new CommandClassGUI(this));
+        this.getCommand("skilltreegui").setExecutor(new CommandCombineSkillGUI(this)); // Contribution for rzYork
+        this.getCommand("classgui").setExecutor(new CommandClassGUI(this)); 
         this.getCommand("selectclassgui").setExecutor(new CommandSelectClassGUI(this));
-        this.getCommand("itemcombinegui").setExecutor(new CommandItemCombineGUI(this));
+        this.getCommand("itemcombinegui").setExecutor(new CommandItemCombineGUI(this)); // Contribution for rzYork
         this.getCommand("bindskillgui").setExecutor(new CommandBindSkillGUI(this));
-        this.getCommand("itemskincombinegui").setExecutor(new CommandCobineSkillGUI(this));
-        this.getCommand("gemcombinegui").setExecutor(new CommandGemCombineGUI(this));
+        this.getCommand("itemskincombinegui").setExecutor(new CommandItemSkinCombineGUI(this)); // Contribution for rzYork
+        this.getCommand("gemcombinegui").setExecutor(new CommandGemCombineGUI(this));	// Contribution for rzYork
         this.getCommand("skillbar").setExecutor(new CommandSkillBar(this));
         
         getLogger().info(format(msg_config.getString("Messages.loadplugin")));

@@ -4,11 +4,11 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
-public class CommandCobineSkillGUI implements CommandExecutor {
+public class CommandItemSkinCombineGUI implements CommandExecutor {
 	IceLegend ic;
-	public CommandCobineSkillGUI(IceLegend iceLegend) {
+	public CommandItemSkinCombineGUI(IceLegend ic) {
 		// TODO Auto-generated constructor stub
-		ic = iceLegend;
+		this.ic = ic;
 	}
 
 	@Override
