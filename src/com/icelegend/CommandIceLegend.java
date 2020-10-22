@@ -29,7 +29,7 @@ public class CommandIceLegend implements CommandExecutor {
 		// TODO Auto-generated constructor stub
 		this.ic = ic;
 	}
-	private FileConfiguration msg_config = ic.getMessagesConfig();
+
 	//String prefix = msg_config.getString("prefix");
 	@Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -62,11 +62,11 @@ public class CommandIceLegend implements CommandExecutor {
 	        //This opens the inventory
 	        player.openInventory(gui);*/
 			
-        	sender.sendMessage(ic.format(msg_config.getString("Messages.Gemsuccess")));
+        	sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Gemsuccess")));
  
             
         }else {
-        	sender.sendMessage(ic.format(msg_config.getString("Messages.Gemfailed")));
+        	sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Gemfailed")));
         }
 
         // If the player (or console) uses our command correct, we can return true
