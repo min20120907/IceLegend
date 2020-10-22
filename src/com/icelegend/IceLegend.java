@@ -25,9 +25,23 @@ public class IceLegend extends JavaPlugin{
 	private File item_skin_com = new File(this.getDataFolder(), "ItemSkinCombineGUI.yml");
 	private File item_tem = new File(this.getDataFolder(), "ItemTemplate.yml");
 	private File placeholder = new File(this.getDataFolder(), "Placeholder_List.yml");
-	private File series_lore = new File(this.getDataFolder(), "");
-	
-	private FileConfiguration msg_config = YamlConfiguration.loadConfiguration(msg);
+	private File series_lore = new File(this.getDataFolder(), "SeriesLore.yml");
+	// initialize the yaml configurations
+	private FileConfiguration msg_config = YamlConfiguration.loadConfiguration(msg );
+	private FileConfiguration attr_gui_config = YamlConfiguration.loadConfiguration(attr_gui);
+	private FileConfiguration attr_name_config = YamlConfiguration.loadConfiguration(attr_name);
+	private FileConfiguration class_yml_config = YamlConfiguration.loadConfiguration(class_yml);
+	private FileConfiguration class_gui_config = YamlConfiguration.loadConfiguration(class_gui);
+	private FileConfiguration components_yml_config = YamlConfiguration.loadConfiguration(components_yml);
+	private FileConfiguration gem_config = YamlConfiguration.loadConfiguration(gem);
+	private FileConfiguration gem_com_config = YamlConfiguration.loadConfiguration(gem_com);
+	private FileConfiguration item_com_config = YamlConfiguration.loadConfiguration(item_com);
+	private FileConfiguration item_mat_config = YamlConfiguration.loadConfiguration(item_mat);
+	private FileConfiguration item_skin_config = YamlConfiguration.loadConfiguration(item_skin);
+	private FileConfiguration item_skin_com_config = YamlConfiguration.loadConfiguration(item_skin_com);
+	private FileConfiguration item_tem_config = YamlConfiguration.loadConfiguration(item_tem);
+	private FileConfiguration placeholder_config = YamlConfiguration.loadConfiguration(placeholder);
+	private FileConfiguration series_lore_config = YamlConfiguration.loadConfiguration(series_lore);
 	
     @Override
     public void onEnable() {
