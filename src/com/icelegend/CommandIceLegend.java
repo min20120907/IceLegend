@@ -17,6 +17,7 @@ import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 
@@ -65,11 +66,10 @@ public class CommandIceLegend implements CommandExecutor {
 			//subcommand relaod
 			if (cmd.getName().equalsIgnoreCase("reload")) {
 				if(sender.hasPermission("IceLegend.command.reload")) {
-					Plugin plugin = Bukkit.getPluginManager().getPlugin("IceLegend");
-					Bukkit.getPluginManager().disablePlugin(plugin);
-					Bukkit.getPluginManager().enablePlugin(plugin);
+					Bukkit.getPluginManager().disablePlugin(ic);
+					Bukkit.getPluginManager().enablePlugin(ic);
 				}else {
-					
+					sender.sendMessage(ic.format(ic.msg_config.getString("Messages.nopermission")));
 				}
 					
 			}
