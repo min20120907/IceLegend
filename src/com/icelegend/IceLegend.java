@@ -1,7 +1,5 @@
 package com.icelegend;
 import java.io.File;
-
-import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;

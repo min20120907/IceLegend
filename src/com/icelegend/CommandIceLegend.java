@@ -62,6 +62,18 @@ public class CommandIceLegend implements CommandExecutor {
 	        //This opens the inventory
 	        player.openInventory(gui);*/
 			
+			//subcommand relaod
+			if (cmd.getName().equalsIgnoreCase("reload")) {
+				if(sender.hasPermission("IceLegend.command.reload")) {
+					Plugin plugin = Bukkit.getPluginManager().getPlugin("IceLegend");
+					Bukkit.getPluginManager().disablePlugin(plugin);
+					Bukkit.getPluginManager().enablePlugin(plugin);
+				}else {
+					
+				}
+					
+			}
+			
         	sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Gemsuccess")));
  
             
