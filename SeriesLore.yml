@@ -1,5 +1,5 @@
 Series: #系列
-  Test: #系列ID 用於零件 Series上
-    name: 試作品 #系列名稱 將顯示在物品上
-    lore: #出現在武器上的敘述
-    - '試作品'
+   Test: #系列ID 用於零件 Series上
+      name: 試作品 #系列名稱 將顯示在物品上
+      lore: #出現在武器上的敘述
+      - 試作品

@@ -1,4 +1,5 @@
 Title: Item Combine GUI
+count: 56
 locate01: #圖標ID 
    Name: '&a'
    Use: none #none為無功能 
@@ -44,19 +45,24 @@ locate02: #圖標ID
    Name: '&c離開介面'
    Use: BACK #back為退出介面 
    Material: RED_stained_glass_pane
-   Locate: -37
+   Locate:
+   - 37
    Lore:
    - ''
 locate03: #圖標ID 
    Name: '&a確認合成'
    Use: YES #YES為確認合成
    Material: GREEN_stained_glass_pane
-   Locate: '45'
+   Locate:
+   - 45
+   Lore:
+   - ''
 locate04: #圖標ID 
    Name: 請放置零件於此處
    Use: component.locate1 #零件locate1的位置 可放上零件後
    Material: GRAY_stained_glass_pane
-   Locate: 20
+   Locate:
+   - 20
    Lore:
    - '&7可放置零件類型:'
    - '&c刀刃'
@@ -66,39 +72,53 @@ locate05: #圖標ID
    Material: GRAY_stained_glass_pane
    Locate:
    - 21
+   Lore:
+   - ''
 locate06: #圖標ID 
    Name: ''
    Use: component.locate3 #零件locate3的位置 可放上零件後
    Material: GRAY_stained_glass_pane
    Locate:
    - 21
+   Lore:
+   - ''
 locate07: #圖標ID 
    Name: ''
    Use: component.locate4 #零件locate4的位置 可放上零件後
    Material: GRAY_stained_glass_pane
    Locate:
    - 22
+   Lore:
+   - ''
 locate08: #圖標ID 
    Name: ''
    Use: component.locate5 #零件locate5的位置 可放上零件後
    Material: GRAY_stained_glass_pane
    Locate:
    - 29
+   Lore:
+   - ''
 locate09: #圖標ID 
    Name: ''
    Use: component.locate6 #零件locate6的位置 可放上零件後
    Material: GRAY_stained_glass_pane
    Locate:
    - 30
+   Lore:
+   - ''
 locate10: #圖標ID 
    Name: ''
    Use: component.locate7 #零件locate7的位置 可放上零件後
    Material: GRAY_stained_glass_pane
    Locate:
    - 31
+   Lore:
+   - ''
 locate11: #圖標ID 
    Name: ''
    Use: component.locate8 #零件locate8的位置 可放上零件後
    Material: GRAY_stained_glass_pane
    Locate:
    - 32
+   Lore:
+   - ''

@@ -1,6 +1,7 @@
 package com.icelegend;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Bukkit;
@@ -19,7 +20,7 @@ public class CommandItemCombineGUI implements CommandExecutor {
 
 	public CommandItemCombineGUI(IceLegend ic) {
 		// TODO Auto-generated constructor stub
-		ic = this.ic;
+		this.ic = ic;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -28,28 +29,33 @@ public class CommandItemCombineGUI implements CommandExecutor {
 		// TODO Auto-generated method stub
 		// START OF GUI
 		DecimalFormat formatter = new DecimalFormat("00");
-		Inventory gui = Bukkit.createInventory(null, 9, ic.item_com_config.getString("Title"));
+		sender.sendMessage("[Debug] Title: "+ic.item_com_config.getString("Title"));
+		
+		Inventory gui = Bukkit.createInventory(null, Integer.parseInt(ic.item_com_config.getString("count")) , ic.item_com_config.getString("Title"));
 		// proclaim the sender as a player
 		Player player = (Player) sender;
 		// This opens the inventory
-		int i = 0;
+		int i = 1;
 		while (ic.item_com_config.getString("locate" + formatter.format(i)) != null) {
 			// Proclaim the attribute variables
-			List<Integer> locate = (List<Integer>) ic.item_com_config
-					.getList(("locate" + formatter.format(i) + ".Locate"));
+			List<Integer> locate = (List<Integer>) ic.item_com_config.getList(("locate" + formatter.format(i) + ".Locate"));
 			// do the loop to put all the items in the different locations
+			
 			for (int j = 0; j < locate.size(); j++) {
+				sender.sendMessage("[Debug] Material "+formatter.format(2)+": "+ic.item_com_config.getString("locate" + formatter.format(2) + ".Material")+"\nj: "+j);
+				sender.sendMessage("[Debug] Locate Size "+formatter.format(i)+": "+locate.size());
 				String name = ic.item_com_config.getString("locate" + formatter.format(i) + ".Name");
 				String use = ic.item_com_config.getString("locate" + formatter.format(i) + ".Use");
-				ItemStack mat = new ItemStack(Material
-						.getMaterial(ic.item_com_config.getString("locate" + formatter.format(i) + ".Material")));
-				List<String> lore = (List<String>) ic.item_com_config
-						.getList(("locate" + formatter.format(i) + ".Lore"));
+				ItemStack mat = new ItemStack(Material.matchMaterial(ic.item_com_config.getString("locate" + formatter.format(i) + ".Material")));
+				List<String> lore = (List<String>) ic.item_com_config.getList(("locate" + formatter.format(i) + ".Lore"));
+				sender.sendMessage("[Debug] Locate "+formatter.format(j)+": "+locate.get(j));
 				ItemMeta meta = mat.getItemMeta();
 				// apply the color format
 				formatList(lore);
 				// set lore on item mat
 				meta.setLore(lore);
+				// set display name
+				meta.setDisplayName(name);
 				// set meta to the item mat
 				mat.setItemMeta(meta);
 				// give item to gui
@@ -68,9 +74,9 @@ public class CommandItemCombineGUI implements CommandExecutor {
 	}
 
 	List<String> formatList(List<String> a) {
-		List<String> tmp = null;
+		List<String> tmp = new ArrayList<String>();
 		for (int i = 0; i < a.size(); i++)
-			tmp.set(0, ic.format(a.get(i)));
+			tmp.add(ic.format(a.get(i)));
 		return tmp;
 	}
 }

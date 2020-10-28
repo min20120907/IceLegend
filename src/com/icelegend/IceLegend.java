@@ -63,7 +63,7 @@ public class IceLegend extends JavaPlugin implements Listener{
 		if (!gem_com.exists())
 			saveResource("GemCombineGUI.yml", false);
 		if (!item_com.exists())
-			saveResource(".yml", false);
+			saveResource("ItemCombineGUI.yml", false);
 		if (!item_mat.exists())
 			saveResource("ItemMaterial.yml", false);
 		if (!item_skin.exists())

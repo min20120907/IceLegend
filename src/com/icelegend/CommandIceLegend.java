@@ -50,7 +50,7 @@ public class CommandIceLegend implements CommandExecutor {
 				if(sender.hasPermission("IceLegend.command.help")) {
 					
 				} else {
-					sender.send
+					sender.sendMessage(ic.format(ic.msg_config.getString("Messages.nopermission")));
 				}
 			}
 
