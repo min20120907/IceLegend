@@ -44,6 +44,15 @@ public class CommandIceLegend implements CommandExecutor {
 					sender.sendMessage(ic.format(ic.msg_config.getString("Messages.nopermission")));
 				}
 			}
+			
+			//sub command help
+			if(cmd.getName().equalsIgnoreCase("help")) {
+				if(sender.hasPermission("IceLegend.command.help")) {
+					
+				} else {
+					sender.send
+				}
+			}
 
 			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Gemsuccess")));
 
