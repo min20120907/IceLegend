@@ -1,56 +1,51 @@
 prefix: '&b冰晶系統 &8››&f'
 Messages:
-  Command:
-    help: '%prefix% &e/icelegend help &f獲得指令'
-    skilltreegui: '%prefix% &f開啟天賦樹介面' #
-    attributegui: '%prefix% &f開啟屬性點介面' 
-    combineskillgui: '%prefix% &f開啟組合技能介面' 
-    classgui: '%prefix% &f開啟光能數值\&技能介面' 
-    selectclassgui: '%prefix% &f開啟選擇光能介面' 
-    itemcombinegui: '%prefix% &f開啟組裝物品介面' 
-    bindskillgui: '%prefix% &f開啟綁定技能介面' 
-    itemskincombinegui: '%prefix% 開啟造型綁定介面'
-    gemcombinegui: '%prefix% 開啟寶石鑲嵌介面'
-    skillbar: '%prefix%  開/關閉技能快捷欄'
-    reload: '%prefix%  檔案重新讀取'
-  Combineitemsuccess: '%prefix% &f組裝武器完成'
-  skincombineuccess: '%prefix% &f成功綁定造型到%weapon%'
-  Gemsuccess: '%prefix% &f鑲嵌寶石成功'
-  Gemfailed: '%prefix% &f鑲嵌寶石失敗'
-  Combineskillsuccess: '%prefix% &f合成技能成功'
-  Combineskillfail: '%prefix% &f合成技能失敗'  
-  unlockclass: '%prefix% &f成功解鎖新光能'
-  unlockclassfail: '%prefix% &f尚未解鎖此光能'
-  noclassslot: '%prefix% &f光能欄位不足'
-  classupgrade: '%prefix% &f你的光能升級到%level%了'
-  classselect: '%prefix% &f你選擇使用了%class%'
-  nomana: '%prefix% &f魔力不足'
-  noskillpoint: '%prefix% &f你沒有天賦點'
-  noattributepoint: '%prefix% &f你沒有屬性點'
-  attributeupgrade: '%prefix% &f你升級了屬性 %attribute%'
-  skillupgrade: '%prefix% &f你升級了天賦樹技能 %skill%'
-  bindskill: '%prefix% &f你綁定了%skill%到%slot%'
-  getexp: '%prefix% 你獲得了%exp%經驗值'
-  getattributepoint: '%prefix% 你獲得了%attributepoint%屬性點'
-  getskillpoint: '%prefix% 你獲得了%skillpoint%技能點'
-  getitem: '%prefix% &f你獲得了%item%'
-  getskillitem: '%prefix% &f你獲得了%skillitem%'
-  getgem: '%prefix% &f你獲得了%gem%'
-  getskin: '%prefix% &f你獲得了%skin%'  
-  changeweaponname: '%prefix% 你花費了1000白銀錠為你的物品改名了'
-  #以下為OP指令
-  nopermission: '%prefix% &c你沒有權限使用此命令' 
-  nopermissionclass: '%prefix% &c你沒有權限使用此光能' 
-  opunlockclasstoplayer: '%prefix% 你幫助%player%解鎖了%class%'
-  giveskillpoint: '%prefix% 你給予了%prefix%天賦點'
-  giveattributepoint: '%prefix% 你給予了%player%屬性點'
-  givemana: '%prefix% 你給予了%player%%mana%魔力'
-  giveitem: '%prefix% &f你給予了%player%%item%'
-  giveskillitem: '%prefix% &f你給予了%player%%skillitem%'
-  givegem: '%prefix% &f你給予了%player%%gem%'
-  giveskin: '%prefix% &f你給予了%player%%skin%'
-  #以下爲系統指令
-  loadplugin: '%prefix% &f插件載入中...'
-  loadsuccess: '%prefix% &f插件載入成功！'
-  disableplugin: '%prefix% &f插件停用中...'
-  playernotdetected: '%prefix% &f請使用玩家帳號使用此命令'
+   Command:
+      help: '%prefix% &e/icelegend help &f獲得指令' #指令
+      skilltreegui: '%prefix% &f開啟天賦樹介面' #指令
+      attributegui: '%prefix% &f開啟屬性點介面' #指令 
+      combineskillgui: '%prefix% &f開啟組合技能介面' #指令
+      classgui: '%prefix% &f開啟光能數值\&技能介面' #指令
+      selectclassgui: '%prefix% &f開啟選擇光能介面' #指令
+      itemcombinegui: '%prefix% &f開啟組裝物品介面' #指令
+      bindskillgui: '%prefix% &f開啟綁定技能介面' #指令
+      itemskincombinegui: '%prefix% 開啟造型綁定介面' #指令
+      gemcombinegui: '%prefix% 開啟寶石鑲嵌介面' #指令
+      skillbar: '%prefix%  開/關閉技能快捷欄' #指令
+      reload: '%prefix%  檔案重新讀取' #指令
+   Combineitemsuccess: '%prefix% &f組裝武器完成'
+   skincombineuccess: '%prefix% &f成功綁定造型到%weapon%'
+   Gemsuccess: '%prefix% &f鑲嵌寶石成功'
+   Gemfailed: '%prefix% &f鑲嵌寶石失敗'
+   unlockclass: '%prefix% &f成功解鎖新光能'
+   unlockclassfail: '%prefix% &f尚未解鎖此光能'
+   noclassslot: '%prefix% &f光能欄位不足'
+   classupgrade: '%prefix% &f你的光能升級到%level%了'
+   classselect: '%prefix% &f你選擇使用了%class%'
+   nomana: '%prefix% &f魔力不足'
+   noskillpoint: '%prefix% &f你沒有天賦點'
+   noattributepoint: '%prefix% &f你沒有屬性點'
+   attributeupgrade: '%prefix% &f你升級了屬性 %attribute%'
+   skillupgrade: '%prefix% &f你升級了天賦樹技能 %skill%'
+   bindskill: '%prefix% &f你綁定了%skill%到%slot%'
+   getexp: '%prefix% 你獲得了%exp%經驗值'
+   getattributepoint: '%prefix% 你獲得了%attributepoint%屬性點' #指令
+   getskillpoint: '%prefix% 你獲得了%skillpoint%技能點' #指令
+   getitem: '%prefix% &f你獲得了%item%' #指令
+   getgem: '%prefix% &f你獲得了%gem%' #指令
+   getskin: '%prefix% &f你獲得了%skin%' #指令
+#以下為OP指令
+   nopermission: '%prefix% &c你沒有權限使用此命令'
+   nopermissionclass: '%prefix% &c你沒有權限使用此光能'
+   opunlockclasstoplayer: '%prefix% 你幫助%player%解鎖了%class%' #指令
+   giveskillpoint: '%prefix% 你給予了%prefix%天賦點' #指令
+   giveattributepoint: '%prefix% 你給予了%player%屬性點' #指令
+   givemana: '%prefix% 你給予了%player%%mana%魔力' #指令
+   giveitem: '%prefix% &f你給予了%player%%item%' #指令
+   givegem: '%prefix% &f你給予了%player%%gem%' #指令
+   giveskin: '%prefix% &f你給予了%player%%skin%' #指令
+#以下爲系統指令
+   loadplugin: '%prefix% &f插件載入中...'
+   loadsuccess: '%prefix% &f插件載入成功！'
+   disableplugin: '%prefix% &f插件停用中...'
+   playernotdetected: '%prefix% &f請使用玩家帳號使用此命令'

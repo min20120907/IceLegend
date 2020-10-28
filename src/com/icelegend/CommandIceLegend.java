@@ -20,68 +20,38 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-
-
 @SuppressWarnings("unused")
 public class CommandIceLegend implements CommandExecutor {
 	private IceLegend ic;
-	
+
 	public CommandIceLegend(IceLegend ic) {
 		// TODO Auto-generated constructor stub
 		this.ic = ic;
 	}
 
-	//String prefix = msg_config.getString("prefix");
+	// String prefix = msg_config.getString("prefix");
 	@Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (sender instanceof Player) {
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		if (sender instanceof Player) {
 			Player player = (Player) sender;
-			
-			/*Inventory gui = Bukkit.createInventory(null, 9,ChatColor.AQUA + "冰晶系統 "+ ChatColor.DARK_GRAY + ">> "+ config.getString("title") );
-			
 
-	        //This is where you create the item
-	        ItemStack survival = new ItemStack (Material.DIRT);
-	        ItemMeta survivalMeta = survival.getItemMeta();
-	       
-	       
-	        //This is where you set the display name of the item
-	        survival.setItemMeta(survivalMeta);
-	       
-	        //This is where you decide what slot the item goes into
-	        gui.setItem(0, survival);
-	        gui.setItem(1, survival);
-	        gui.setItem(2, survival);
-	        gui.setItem(3, survival);
-	        gui.setItem(4, survival);
-	        gui.setItem(5, survival);
-	        gui.setItem(6, survival);
-	        gui.setItem(6, survival);
-	        gui.setItem(7, survival);
-	        gui.setItem(8, survival);
-	       
-	        //This opens the inventory
-	        player.openInventory(gui);*/
-			
-			//subcommand relaod
+			// subcommand relaod
 			if (cmd.getName().equalsIgnoreCase("reload")) {
-				if(sender.hasPermission("IceLegend.command.reload")) {
+				if (sender.hasPermission("IceLegend.command.reload")) {
 					Bukkit.getPluginManager().disablePlugin(ic);
 					Bukkit.getPluginManager().enablePlugin(ic);
-				}else {
+				} else {
 					sender.sendMessage(ic.format(ic.msg_config.getString("Messages.nopermission")));
 				}
-					
 			}
-			
-        	sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Gemsuccess")));
- 
-            
-        }else {
-        	sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Gemfailed")));
-        }
 
-        // If the player (or console) uses our command correct, we can return true
-        return true;
-    }
+			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Gemsuccess")));
+
+		} else {
+			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Gemfailed")));
+		}
+
+		// If the player (or console) uses our command correct, we can return true
+		return true;
+	}
 }

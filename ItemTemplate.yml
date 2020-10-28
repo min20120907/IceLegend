@@ -1,18 +1,17 @@
 Melee: #攻擊方式種類
-  #名稱由8個部位的名稱組成
-  Name: '<component.name.locate1><component.name.locate2><component.name.locate3><component.name.locate4><component.name.locate5><component.name.locate6><component.name.locate7><component.name.locate8>'
-  Material: 'Melee' #讀取ItemMaterial.yml裡 Type 為Melee的所有材質 從所有設定的材質中隨機抽樣作為預設材質
-  Attribute: #
-  - '<component.attibute.locate1>'
-  - '<component.attibute.locate2>'    
-  - '<component.attibute.locate3>'
-  - '<component.attibute.locate4>'
-  - '<component.attibute.locate5>'
-  - '<component.attibute.locate6>'
-  - '<component.attibute.locate7>'
-  - '<component.attibute.locate8>'
-  Gem: #寶石數量將由所有格子的寶石格子總和後設置敘述 最多4個寶石槽 設定於Config 每個寶石槽佔一行敘述
-  - '<component.gem.locate1>+<component.gem.locate2>+<component.gem.locate3>+<component.gem.locate4>+<component.gem.locate5>+<component.gem.locate6>+<component.gem.locate7>+<component.gem.locate8>'
-  Lore: #以所有零件中佔最多零件的系列寫上
-  - '<component.series.most>'
-  
+#名稱由8個部位的名稱組成
+   Name: <component.name.locate1><component.name.locate2><component.name.locate3><component.name.locate4><component.name.locate5><component.name.locate6><component.name.locate7><component.name.locate8>
+   Material: Melee #讀取ItemMaterial.yml裡 Type 為Melee的所有材質 從所有設定的材質中隨機抽樣作為預設材質
+   Attribute: #
+   - <component.attibute.locate1>
+   - <component.attibute.locate2>
+   - <component.attibute.locate3>
+   - <component.attibute.locate4>
+   - <component.attibute.locate5>
+   - <component.attibute.locate6>
+   - <component.attibute.locate7>
+   - <component.attibute.locate8>
+   Gem: #寶石數量將由所有格子的寶石格子總和後設置敘述 最多4個寶石槽 設定於Config 每個寶石槽佔一行敘述
+   - <component.gem.locate1>+<component.gem.locate2>+<component.gem.locate3>+<component.gem.locate4>+<component.gem.locate5>+<component.gem.locate6>+<component.gem.locate7>+<component.gem.locate8>
+   Lore: #以所有零件中佔最多零件的系列寫上
+   - <component.series.most>
