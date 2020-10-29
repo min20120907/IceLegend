@@ -16,7 +16,7 @@ public class CommandSkillBar implements CommandExecutor {
 		// TODO Auto-generated method stub
 		
 		if(sender.hasPermission("IceLegend.command.skillbar")) {
-			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.skillbar")));
+			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.skillbar")));
 		}
 		return false;
 	}

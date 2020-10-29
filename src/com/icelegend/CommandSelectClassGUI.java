@@ -15,7 +15,7 @@ public class CommandSelectClassGUI implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// TODO Auto-generated method stub
 		if(sender.hasPermission("IceLegend.command.selectclassgui")) {
-			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.selectclassgui")));
+			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.selectclassgui")));
 		}
 		return false;
 	}
