@@ -21,7 +21,12 @@ public class ClickerEvent implements Listener{
 	       // Inventory open = event.getClickedInventory();
 	       ItemStack item = event.getCurrentItem();
 
-	       if(event.getAction() == InventoryAction.PICKUP_ALL)
+	       if(event.getAction() == InventoryAction.PICKUP_ALL
+	    		   || event.getAction() == InventoryAction.DROP_ALL_CURSOR
+	    		   || event.getAction() == InventoryAction.DROP_ALL_SLOT
+	    		   || event.getAction() == InventoryAction.DROP_ONE_CURSOR
+	    		   || event.getAction() == InventoryAction.DROP_ONE_SLOT
+	    		   )
 	       {
 	    	   event.setCancelled(true); // Assuming you want to lock all items.
 	       }

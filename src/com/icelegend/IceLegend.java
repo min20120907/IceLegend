@@ -26,6 +26,7 @@ public class IceLegend extends JavaPlugin implements Listener{
 	public File item_tem = new File(this.getDataFolder(), "ItemTemplate.yml");
 	public File placeholder = new File(this.getDataFolder(), "Placeholder_List.yml");
 	public File series_lore = new File(this.getDataFolder(), "SeriesLore.yml");
+	public File help = new File(this.getDataFolder(), "Commandpage.yml");
 	// initialize the yaml configurations
 	public FileConfiguration msg_config = YamlConfiguration.loadConfiguration(msg);
 	public FileConfiguration attr_gui_config = YamlConfiguration.loadConfiguration(attr_gui);
@@ -42,7 +43,7 @@ public class IceLegend extends JavaPlugin implements Listener{
 	public FileConfiguration item_tem_config = YamlConfiguration.loadConfiguration(item_tem);
 	public FileConfiguration placeholder_config = YamlConfiguration.loadConfiguration(placeholder);
 	public FileConfiguration series_lore_config = YamlConfiguration.loadConfiguration(series_lore);
-
+	public FileConfiguration help_config = YamlConfiguration.loadConfiguration(help);
 	@Override
 	public void onEnable() {
 		// if the YAML disappear, generate one.
@@ -76,7 +77,8 @@ public class IceLegend extends JavaPlugin implements Listener{
 			saveResource("Placeholder_List.yml", false);
 		if (!series_lore.exists())
 			saveResource("SeriesLore.yml", false);
-
+		if (!help.exists())
+			saveResource("Commandpage.yml", false);
 		// initialize the command classes
 		this.getCommand("icelegend").setExecutor(new CommandIceLegend(this));
 		this.getCommand("skilltreegui").setExecutor(new CommandSkillTreeGUI(this));

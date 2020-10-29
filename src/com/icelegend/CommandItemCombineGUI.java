@@ -29,7 +29,7 @@ public class CommandItemCombineGUI implements CommandExecutor {
 		// TODO Auto-generated method stub
 		// START OF GUI
 		DecimalFormat formatter = new DecimalFormat("00");
-		sender.sendMessage("[Debug] Title: "+ic.item_com_config.getString("Title"));
+		// sender.sendMessage("[Debug] Title: "+ic.item_com_config.getString("Title"));
 		
 		Inventory gui = Bukkit.createInventory(null, Integer.parseInt(ic.item_com_config.getString("count")) , ic.item_com_config.getString("Title"));
 		// proclaim the sender as a player
@@ -42,13 +42,13 @@ public class CommandItemCombineGUI implements CommandExecutor {
 			// do the loop to put all the items in the different locations
 			
 			for (int j = 0; j < locate.size(); j++) {
-				sender.sendMessage("[Debug] Material "+formatter.format(2)+": "+ic.item_com_config.getString("locate" + formatter.format(2) + ".Material")+"\nj: "+j);
-				sender.sendMessage("[Debug] Locate Size "+formatter.format(i)+": "+locate.size());
+				// sender.sendMessage("[Debug] Material "+formatter.format(2)+": "+ic.item_com_config.getString("locate" + formatter.format(2) + ".Material")+"\nj: "+j);
+				// sender.sendMessage("[Debug] Locate Size "+formatter.format(i)+": "+locate.size());
 				String name = ic.item_com_config.getString("locate" + formatter.format(i) + ".Name");
 				String use = ic.item_com_config.getString("locate" + formatter.format(i) + ".Use");
 				ItemStack mat = new ItemStack(Material.matchMaterial(ic.item_com_config.getString("locate" + formatter.format(i) + ".Material")));
 				List<String> lore = (List<String>) ic.item_com_config.getList(("locate" + formatter.format(i) + ".Lore"));
-				sender.sendMessage("[Debug] Locate "+formatter.format(j)+": "+locate.get(j));
+				// sender.sendMessage("[Debug] Locate "+formatter.format(j)+": "+locate.get(j));
 				ItemMeta meta = mat.getItemMeta();
 				// apply the color format
 				formatList(lore);

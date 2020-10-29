@@ -2,6 +2,8 @@ package com.icelegend;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -30,13 +32,14 @@ public class CommandIceLegend implements CommandExecutor {
 	}
 
 	// String prefix = msg_config.getString("prefix");
+	@SuppressWarnings("unchecked")
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (sender instanceof Player) {
 			Player player = (Player) sender;
 
 			// subcommand relaod
-			if (cmd.getName().equalsIgnoreCase("reload")) {
+			if (args[0].equalsIgnoreCase("reload")) {
 				if (sender.hasPermission("IceLegend.command.reload")) {
 					Bukkit.getPluginManager().disablePlugin(ic);
 					Bukkit.getPluginManager().enablePlugin(ic);
@@ -46,8 +49,13 @@ public class CommandIceLegend implements CommandExecutor {
 			}
 			
 			//sub command help
-			if(cmd.getName().equalsIgnoreCase("help")) {
+			if(args[0].equalsIgnoreCase("help")) {
 				if(sender.hasPermission("IceLegend.command.help")) {
+
+
+						List<String> msg =(List<String>) ic.help_config.getList("Page"+args[1]+".messages");
+						for(int j = 0; j< msg.size();j++)
+							sender.sendMessage(ic.format(msg.get(j)));
 					
 				} else {
 					sender.sendMessage(ic.format(ic.msg_config.getString("Messages.nopermission")));

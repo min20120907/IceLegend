@@ -12,8 +12,11 @@ public class CommandGemCombineGUI implements CommandExecutor {
 	}
 
 	@Override
-	public boolean onCommand(CommandSender arg0, Command arg1, String arg2, String[] arg3) {
+	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// TODO Auto-generated method stub
+		if(sender.hasPermission("IceLegend.command.gemcombinegui")) {
+			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.gemcombinegui")));
+		}
 		return false;
 	}
 
