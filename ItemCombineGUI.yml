@@ -1,10 +1,11 @@
-Title: Item Combine GUI
-count: 56
+Title: §a物品零件合成介面
+count: 45
 locate01: #圖標ID 
-   Name: '&a'
+   Name: '§a'
    Use: none #none為無功能 
    Material: Black_stained_glass_pane
    Locate:
+   - 0
    - 1
    - 2
    - 3
@@ -25,100 +26,109 @@ locate01: #圖標ID
    - 22
    - 23
    - 24
-   - 25
+   - 26
    - 27
    - 28
+   - 32
    - 33
    - 34
    - 35
-   - 36
+   - 37
    - 38
    - 39
    - 40
    - 41
    - 42
    - 43
-   - 44
    Lore:
    - ''
 locate02: #圖標ID 
-   Name: '&c離開介面'
+   Name: '§c離開介面'
    Use: BACK #back為退出介面 
    Material: RED_stained_glass_pane
-   Locate:
-   - 37
+   Locate: 
+   - 36
    Lore:
-   - ''
+   - '§c右鍵點擊離開合成界面'
 locate03: #圖標ID 
-   Name: '&a確認合成'
+   Name: '§a確認合成'
    Use: YES #YES為確認合成
    Material: GREEN_stained_glass_pane
-   Locate:
-   - 45
-   Lore:
-   - ''
+   Locate: 
+   - 44
+   Lore: 
+   - '§a右鍵點擊進行合成'
 locate04: #圖標ID 
-   Name: 請放置零件於此處
+   Name: '§a請放置零件於此處'
    Use: component.locate1 #零件locate1的位置 可放上零件後
    Material: GRAY_stained_glass_pane
-   Locate:
-   - 20
+   Locate: 
+   - 11
    Lore:
-   - '&7可放置零件類型:'
-   - '&c刀刃'
+   - '§7可放置零件類型:'
+   - '§c刀刃'
 locate05: #圖標ID 
-   Name: ''
+   Name: '§a請放置零件於此處'
    Use: component.locate2 #零件locate2的位置 可放上零件後
    Material: GRAY_stained_glass_pane
    Locate:
-   - 21
-   Lore:
-   - ''
+   - 12
+   Lore: 
+   - '§7可放置零件類型:'
 locate06: #圖標ID 
-   Name: ''
+   Name: '§a請放置零件於此處'
    Use: component.locate3 #零件locate3的位置 可放上零件後
    Material: GRAY_stained_glass_pane
    Locate:
-   - 21
-   Lore:
-   - ''
+   - 13
+   Lore: 
+   - '§7可放置零件類型:'
 locate07: #圖標ID 
-   Name: ''
+   Name: '§a請放置零件於此處'
    Use: component.locate4 #零件locate4的位置 可放上零件後
    Material: GRAY_stained_glass_pane
    Locate:
-   - 22
-   Lore:
-   - ''
+   - 14
+   Lore: 
+   - '§7可放置零件類型:'
 locate08: #圖標ID 
-   Name: ''
+   Name: '§a請放置零件於此處'
    Use: component.locate5 #零件locate5的位置 可放上零件後
    Material: GRAY_stained_glass_pane
    Locate:
    - 29
-   Lore:
-   - ''
+   Lore: 
+   - '§7可放置零件類型:'
 locate09: #圖標ID 
-   Name: ''
+   Name: '§a請放置零件於此處'
    Use: component.locate6 #零件locate6的位置 可放上零件後
    Material: GRAY_stained_glass_pane
    Locate:
    - 30
-   Lore:
-   - ''
+   Lore: 
+   - '§7可放置零件類型:'
 locate10: #圖標ID 
-   Name: ''
+   Name: '§a請放置零件於此處'
    Use: component.locate7 #零件locate7的位置 可放上零件後
    Material: GRAY_stained_glass_pane
    Locate:
    - 31
-   Lore:
-   - ''
+   Lore: 
+   - '§7可放置零件類型:'
 locate11: #圖標ID 
-   Name: ''
+   Name: '§a請放置零件於此處'
    Use: component.locate8 #零件locate8的位置 可放上零件後
    Material: GRAY_stained_glass_pane
    Locate:
    - 32
-   Lore:
-   - ''
+   Lore: 
+   - '§7可放置零件類型:'
+locate12: #圖標ID 
+   Name: '§a請放置命名牌於此處'
+   Use: rename #放上命名過的命名牌可使物品繼承該命名牌的名字
+   Material: Name_TAG
+   Locate:
+   - 19
+   Lore: 
+   - '§7請放置改過名字的命名牌'
+   - '§7該名字將覆蓋合成預設名'
