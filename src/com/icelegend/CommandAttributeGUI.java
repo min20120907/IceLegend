@@ -18,7 +18,7 @@ public class CommandAttributeGUI implements CommandExecutor {
 		if(sender.hasPermission("IceLegend.command.attributegui")) {
 			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.attributegui")));
 		}
-		return false;
+		return true;
 	}
 
 }

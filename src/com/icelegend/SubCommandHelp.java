@@ -17,7 +17,10 @@ public class SubCommandHelp extends CommandBase<IceLegend> {
 	@Override
 	public boolean runCommand(CommandSender sender, Command rootCommand, String label, String[] args) {
 		// TODO Auto-generated method stub
+		sender.sendMessage("");
+		if (sender instanceof Player) {
 		Player player = (Player) sender;
+		
 		if (player.hasPermission("IceLegend.command.help")) {
 			try {
 				List<String> msg = (List<String>) ic.help_config.getList("Page" + args[0] + ".messages");
@@ -33,7 +36,10 @@ public class SubCommandHelp extends CommandBase<IceLegend> {
 		} else {
 			player.sendMessage(ic.format(ic.msg_config.getString("Messages.nopermission")));
 		}
-		return false;
+		}else {
+			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.playernotdetected")));
+		}
+		return true;
 	}
 
 

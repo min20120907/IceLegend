@@ -34,9 +34,10 @@ public class CommandItemCombineGUI implements CommandExecutor {
 
 		Inventory gui = Bukkit.createInventory(null, Integer.parseInt(ic.item_com_config.getString("count")),
 				ic.item_com_config.getString("Title"));
+		
 		// proclaim the sender as a player
 		Player player = (Player) sender;
-		player.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.itemcomebinegui")));
+		player.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.itemcombinegui")));
 		// This opens the inventory
 		int i = 1;
 		while (ic.item_com_config.getString("locate" + formatter.format(i)) != null) {

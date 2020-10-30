@@ -17,7 +17,7 @@ public class CommandSelectClassGUI implements CommandExecutor {
 		if(sender.hasPermission("IceLegend.command.selectclassgui")) {
 			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.selectclassgui")));
 		}
-		return false;
+		return true;
 	}
 
 }

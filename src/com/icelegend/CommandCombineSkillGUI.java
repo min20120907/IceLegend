@@ -14,10 +14,11 @@ public class CommandCombineSkillGUI implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// TODO Auto-generated method stub
+		sender.sendMessage("");
 		if(sender.hasPermission("IceLegend.command.combineskillgui")) {
 			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.combineskillgui")));
 		}
-		return false;
+		return true;
 	}
 
 }

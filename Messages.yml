@@ -49,4 +49,5 @@ Messages:
    loadsuccess: '%prefix% &f插件載入成功！'
    disableplugin: '%prefix% &f插件停用中...'
    playernotdetected: '%prefix% &f請使用玩家帳號使用此命令'
-   argumentsfailed: "%prefix% &f參數錯誤"
+   argumentsfailed: "%prefix% &f參數錯誤！"
+   reload: "%prefix% &f重新載入插件成功！"

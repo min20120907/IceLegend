@@ -12,15 +12,20 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 @SuppressWarnings("unused")
 public class ClickerEvent implements Listener {
+	IceLegend ic;
+	public ClickerEvent(IceLegend iceLegend) {
+		// TODO Auto-generated constructor stub
+		ic = iceLegend;
+	}
 
 	@EventHandler
 	public void InvenClick(InventoryClickEvent event) {
-		// Player player = (Player) event.getWhoClicked();
-
-		// Inventory inv = event.getInventory();
-		// Inventory open = event.getClickedInventory();
-		// ItemStack item = event.getCurrentItem();
-
+		 Player player = (Player) event.getWhoClicked();
+		 
+		 Inventory inv = event.getInventory();
+		 Inventory open = event.getClickedInventory();
+		 ItemStack item = event.getCurrentItem();
+		 if(event.getView().getTitle().equalsIgnoreCase(ic.format(ic.item_com_config.getString("Title")))&&inv.equals(open)) {
 		if (event.getAction() == InventoryAction.PICKUP_ALL || event.getAction() == InventoryAction.DROP_ALL_CURSOR
 				|| event.getAction() == InventoryAction.DROP_ALL_SLOT
 				|| event.getAction() == InventoryAction.DROP_ONE_CURSOR
@@ -33,7 +38,7 @@ public class ClickerEvent implements Listener {
 				|| event.getAction() == InventoryAction.PICKUP_SOME) {
 			event.setCancelled(true); // Assuming you want to lock all items.
 		}
-
+		 }
 	}
 
 }

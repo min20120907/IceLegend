@@ -11,6 +11,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.event.Event;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -85,16 +86,17 @@ public class IceLegend extends JavaPlugin implements Listener {
 			saveResource("SeriesLore.yml", false);
 		if (!help.exists())
 			saveResource("Commandpage.yml", false);
-		
+
 		// initialize the command classes
 		SubCommandHelp help = new SubCommandHelp(this);
 		SubCommandReload reload = new SubCommandReload(this);
 		CommandIceLegend cil = new CommandIceLegend(this);
-		
+
 		// register subcommands
 		cil.registerSubCommand("help", help);
 		cil.registerSubCommand("reload", reload);
 		this.getCommand("icelegend").setExecutor(cil);
+		this.getCommand("icelegend").setTabCompleter(new TabComEvent(this));
 		// normal command registrations
 		this.getCommand("skilltreegui").setExecutor(new CommandSkillTreeGUI(this));
 		this.getCommand("attributegui").setExecutor(new CommandAttributeGUI(this));
@@ -107,9 +109,12 @@ public class IceLegend extends JavaPlugin implements Listener {
 		this.getCommand("gemcombinegui").setExecutor(new CommandGemCombineGUI(this));
 		this.getCommand("skillbar").setExecutor(new CommandSkillBar(this));
 		// Register the clicker event to the plugin.
-		Bukkit.getPluginManager().registerEvents(new ClickerEvent(), this);
+		Bukkit.getPluginManager().registerEvents(new ClickerEvent(this), this);
+		
 		getLogger().info(format(msg_config.getString("Messages.loadplugin")));
 	}
+
+	
 
 	// Fired when plugin is disabled
 	@Override
@@ -121,22 +126,43 @@ public class IceLegend extends JavaPlugin implements Listener {
 	public String format(String str) {
 		return ChatColor.translateAlternateColorCodes('&', str.replace("%prefix%", msg_config.getString("prefix")));
 	}
-    @Override
-    public List<String> onTabComplete(CommandSender sender, Command cmd, String commandLabel, String[] args) {
-    	if (cmd.getName().equalsIgnoreCase("spawner")) {
-            if (args.length == 1) {
-                ArrayList<String> subcmds = new ArrayList<String>();
-                subcmds.add("help");
-                subcmds.add("reload");
-                
-                Collections.sort(subcmds);
-                
-                return subcmds;
-            }
-        }
-        
-        return null;
-    
-    	
-    }
+	@Override
+    public void reloadConfig() {
+        //config is a FileConfiguration object
+       //cfile is the File object
+    	// initialize the yaml files
+    	 msg = new File(this.getDataFolder(), "Messages.yml");
+    	 attr_gui = new File(this.getDataFolder(), "AttributeGUI.yml");
+    	 attr_name = new File(this.getDataFolder(), "AttributeName.yml");
+    	 class_yml = new File(this.getDataFolder(), "Class.yml");
+    	 class_gui = new File(this.getDataFolder(), "ClassGUI.yml");
+    	 components_yml = new File(this.getDataFolder(), "Components.yml");
+    	 gem = new File(this.getDataFolder(), "Gem.yml");
+    	 gem_com = new File(this.getDataFolder(), "GemCombineGUI.yml");
+    	 item_com = new File(this.getDataFolder(), "ItemCombineGUI.yml");
+    	 item_mat = new File(this.getDataFolder(), "ItemMaterial.yml");
+    	 item_skin = new File(this.getDataFolder(), "ItemSkin.yml");
+    	 item_skin_com = new File(this.getDataFolder(), "ItemSkinCombineGUI.yml");
+    	 item_tem = new File(this.getDataFolder(), "ItemTemplate.yml");
+    	 placeholder = new File(this.getDataFolder(), "Placeholder_List.yml");
+    	 series_lore = new File(this.getDataFolder(), "SeriesLore.yml");
+    	 help = new File(this.getDataFolder(), "Commandpage.yml");
+    	// initialize the yaml configurations
+    	msg_config = YamlConfiguration.loadConfiguration(msg);
+    	 attr_gui_config = YamlConfiguration.loadConfiguration(attr_gui);
+    	 attr_name_config = YamlConfiguration.loadConfiguration(attr_name);
+    	 class_yml_config = YamlConfiguration.loadConfiguration(class_yml);
+    	 class_gui_config = YamlConfiguration.loadConfiguration(class_gui);
+    	 components_yml_config = YamlConfiguration.loadConfiguration(components_yml);
+    	 gem_config = YamlConfiguration.loadConfiguration(gem);
+    	 gem_com_config = YamlConfiguration.loadConfiguration(gem_com);
+    	 item_com_config = YamlConfiguration.loadConfiguration(item_com);
+    	 item_mat_config = YamlConfiguration.loadConfiguration(item_mat);
+    	 item_skin_config = YamlConfiguration.loadConfiguration(item_skin);
+    	 item_skin_com_config = YamlConfiguration.loadConfiguration(item_skin_com);
+    	 item_tem_config = YamlConfiguration.loadConfiguration(item_tem);
+    	 placeholder_config = YamlConfiguration.loadConfiguration(placeholder);
+    	 series_lore_config = YamlConfiguration.loadConfiguration(series_lore);
+    	 help_config = YamlConfiguration.loadConfiguration(help);
+   }
 }

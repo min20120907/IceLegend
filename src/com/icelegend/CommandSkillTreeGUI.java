@@ -14,10 +14,11 @@ public class CommandSkillTreeGUI implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// TODO Auto-generated method stub
+
 		if(sender.hasPermission("IceLegend.command.skilltreegui")) {
 			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.skilltreegui")));
 		}
-		return false;
+		return true;
 	}
 
 }

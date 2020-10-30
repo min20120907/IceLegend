@@ -50,6 +50,7 @@ public abstract class CommandBase<P extends Plugin> implements CommandExecutor {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    	
         if (args.length > 0) {
             CommandExecutor child = subCommands.get(args[0].toLowerCase());
             if (child != null) {

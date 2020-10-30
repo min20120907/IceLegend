@@ -14,15 +14,16 @@ public class SubCommandReload extends CommandBase<IceLegend> {
 	@Override
 	public boolean runCommand(CommandSender sender, Command rootCommand, String label, String[] args) {
 		// TODO Auto-generated method stub
+		sender.sendMessage("");
 		if (sender.hasPermission("IceLegend.command.reload")) {
-			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.disableplugin")));
-			Bukkit.getPluginManager().disablePlugin(ic);
-			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.loadplugin")));
-			Bukkit.getPluginManager().enablePlugin(ic);
+			ic.reloadConfig();
+			ic.onEnable();
+			
+			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.reload")));
 		} else {
 			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.nopermission")));
 		}
-		return false;
+		return true;
 	}
 
 }

@@ -38,6 +38,7 @@ public class CommandIceLegend extends CommandBase<IceLegend> {
 
 	@Override
 	public boolean runCommand(CommandSender sender, Command cmd, String label, String[] args) {
+		sender.sendMessage("");
 		if (sender instanceof Player) {
 			Player player = (Player) sender;
 

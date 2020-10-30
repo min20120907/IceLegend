@@ -14,10 +14,11 @@ public class CommandClassGUI implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// TODO Auto-generated method stub
+
 		if(sender.hasPermission("IceLegend.command.classgui")) {
 			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.classgui")));
 		}
-		return false;
+		return true;
 	}
 
 }
