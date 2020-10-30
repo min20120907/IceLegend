@@ -80,8 +80,17 @@ public class IceLegend extends JavaPlugin implements Listener {
 			saveResource("SeriesLore.yml", false);
 		if (!help.exists())
 			saveResource("Commandpage.yml", false);
+		
 		// initialize the command classes
-		this.getCommand("icelegend").setExecutor(new CommandIceLegend(this));
+		SubCommandHelp help = new SubCommandHelp(this);
+		SubCommandReload reload = new SubCommandReload(this);
+		CommandIceLegend cil = new CommandIceLegend(this);
+		
+		// register subcommands
+		cil.registerSubCommand("help", help);
+		cil.registerSubCommand("reload", reload);
+		this.getCommand("icelegend").setExecutor(cil);
+		// normal command registrations
 		this.getCommand("skilltreegui").setExecutor(new CommandSkillTreeGUI(this));
 		this.getCommand("attributegui").setExecutor(new CommandAttributeGUI(this));
 		this.getCommand("skilltreegui").setExecutor(new CommandCombineSkillGUI(this));

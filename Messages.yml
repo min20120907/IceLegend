@@ -37,7 +37,7 @@ Messages:
 #以下為OP指令
    nopermission: '%prefix% &c你沒有權限使用此命令'
    nopermissionclass: '%prefix% &c你沒有權限使用此光能'
-   opunlockclasstoplayer: '%prefix% 你幫助%player%解鎖了%class%' #指令
+   openlockclasstoplayer: '%prefix% 你幫助%player%解鎖了%class%' #指令
    giveskillpoint: '%prefix% 你給予了%prefix%天賦點' #指令
    giveattributepoint: '%prefix% 你給予了%player%屬性點' #指令
    givemana: '%prefix% 你給予了%player%%mana%魔力' #指令
@@ -49,3 +49,4 @@ Messages:
    loadsuccess: '%prefix% &f插件載入成功！'
    disableplugin: '%prefix% &f插件停用中...'
    playernotdetected: '%prefix% &f請使用玩家帳號使用此命令'
+   argumentsfailed: "%prefix% &f參數錯誤"
