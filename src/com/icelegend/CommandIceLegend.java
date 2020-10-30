@@ -37,38 +37,40 @@ public class CommandIceLegend implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if (sender instanceof Player) {
 			Player player = (Player) sender;
-			sender.sendMessage(ic.format(ic.msg_config.getString("Command.help")));
-			// subcommand relaod
-			if (args[0].equalsIgnoreCase("reload")) {
-				if (sender.hasPermission("IceLegend.command.reload")) {
-					sender.sendMessage(ic.format(ic.msg_config.getString("Command.disableplugin")));
-					Bukkit.getPluginManager().disablePlugin(ic);
-					sender.sendMessage(ic.format(ic.msg_config.getString("Command.enableplugin")));
-					Bukkit.getPluginManager().enablePlugin(ic);
-				} else {
-					sender.sendMessage(ic.format(ic.msg_config.getString("Messages.nopermission")));
-				}
-			}
-			
-			//sub command help
-			if(args[0].equalsIgnoreCase("help")) {
-				if(sender.hasPermission("IceLegend.command.help")) {
-					if(args[1].equals(null))
-					sender.sendMessage(ic.format(ic.msg_config.getString("Command.help")));
-					else {
-						List<String> msg =(List<String>) ic.help_config.getList("Page"+args[1]+".messages");
-						for(int j = 0; j< msg.size();j++)
-							sender.sendMessage(ic.format(msg.get(j)));
-					}
-				} else {
-					sender.sendMessage(ic.format(ic.msg_config.getString("Messages.nopermission")));
-				}
-			}
 
-			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Gemsuccess")));
+			// subcommand relaod
+			if (args.length > 1) {
+				if (args[0].equalsIgnoreCase("reload")) {
+					if (sender.hasPermission("IceLegend.command.reload")) {
+						sender.sendMessage(ic.format(ic.msg_config.getString("Messages.disableplugin")));
+						Bukkit.getPluginManager().disablePlugin(ic);
+						sender.sendMessage(ic.format(ic.msg_config.getString("Messages.loadplugin")));
+						Bukkit.getPluginManager().enablePlugin(ic);
+					} else {
+						sender.sendMessage(ic.format(ic.msg_config.getString("Messages.nopermission")));
+					}
+				}
+
+				// sub command help
+				else if (args[0].equalsIgnoreCase("help")) {
+					if (sender.hasPermission("IceLegend.command.help")) {
+						if (args[1].equals(null))
+							sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.help")));
+						else {
+							List<String> msg = (List<String>) ic.help_config.getList("Page" + args[1] + ".messages");
+							for (int j = 0; j < msg.size(); j++)
+								sender.sendMessage(ic.format(msg.get(j)));
+						}
+					} else {
+						sender.sendMessage(ic.format(ic.msg_config.getString("Messages.nopermission")));
+					}
+				}
+			} else {
+				sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.help")));
+			}
 
 		} else {
-			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Gemfailed")));
+			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.playernotdetected")));
 		}
 
 		// If the player (or console) uses our command correct, we can return true

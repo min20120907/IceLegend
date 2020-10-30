@@ -15,6 +15,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+@SuppressWarnings("unused")
 public class CommandItemCombineGUI implements CommandExecutor {
 	IceLegend ic;
 
@@ -30,25 +31,32 @@ public class CommandItemCombineGUI implements CommandExecutor {
 		// START OF GUI
 		DecimalFormat formatter = new DecimalFormat("00");
 		// sender.sendMessage("[Debug] Title: "+ic.item_com_config.getString("Title"));
-		
-		Inventory gui = Bukkit.createInventory(null, Integer.parseInt(ic.item_com_config.getString("count")) , ic.item_com_config.getString("Title"));
+
+		Inventory gui = Bukkit.createInventory(null, Integer.parseInt(ic.item_com_config.getString("count")),
+				ic.item_com_config.getString("Title"));
 		// proclaim the sender as a player
 		Player player = (Player) sender;
-		player.sendMessage(ic.format(ic.msg_config.getString("Command.itemcomebinegui")));
+		player.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.itemcomebinegui")));
 		// This opens the inventory
 		int i = 1;
 		while (ic.item_com_config.getString("locate" + formatter.format(i)) != null) {
 			// Proclaim the attribute variables
-			List<Integer> locate = (List<Integer>) ic.item_com_config.getList(("locate" + formatter.format(i) + ".Locate"));
+			List<Integer> locate = (List<Integer>) ic.item_com_config
+					.getList(("locate" + formatter.format(i) + ".Locate"));
 			// do the loop to put all the items in the different locations
-			
+
 			for (int j = 0; j < locate.size(); j++) {
-				// sender.sendMessage("[Debug] Material "+formatter.format(2)+": "+ic.item_com_config.getString("locate" + formatter.format(2) + ".Material")+"\nj: "+j);
-				// sender.sendMessage("[Debug] Locate Size "+formatter.format(i)+": "+locate.size());
+				// sender.sendMessage("[Debug] Material "+formatter.format(2)+":
+				// "+ic.item_com_config.getString("locate" + formatter.format(2) +
+				// ".Material")+"\nj: "+j);
+				// sender.sendMessage("[Debug] Locate Size "+formatter.format(i)+":
+				// "+locate.size());
 				String name = ic.item_com_config.getString("locate" + formatter.format(i) + ".Name");
 				String use = ic.item_com_config.getString("locate" + formatter.format(i) + ".Use");
-				ItemStack mat = new ItemStack(Material.matchMaterial(ic.item_com_config.getString("locate" + formatter.format(i) + ".Material")));
-				List<String> lore = (List<String>) ic.item_com_config.getList(("locate" + formatter.format(i) + ".Lore"));
+				ItemStack mat = new ItemStack(Material
+						.matchMaterial(ic.item_com_config.getString("locate" + formatter.format(i) + ".Material")));
+				List<String> lore = (List<String>) ic.item_com_config
+						.getList(("locate" + formatter.format(i) + ".Lore"));
 				// sender.sendMessage("[Debug] Locate "+formatter.format(j)+": "+locate.get(j));
 				ItemMeta meta = mat.getItemMeta();
 				// apply the color format
@@ -67,7 +75,7 @@ public class CommandItemCombineGUI implements CommandExecutor {
 		}
 		// open gui to the user
 		player.openInventory(gui);
-		
+
 		// END OF THE GUI
 
 		return true;

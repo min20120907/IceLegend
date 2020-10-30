@@ -9,7 +9,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class IceLegend extends JavaPlugin implements Listener{
+public class IceLegend extends JavaPlugin implements Listener {
 	// initialize the yaml files
 	public File msg = new File(this.getDataFolder(), "Messages.yml");
 	public File attr_gui = new File(this.getDataFolder(), "AttributeGUI.yml");
@@ -44,6 +44,7 @@ public class IceLegend extends JavaPlugin implements Listener{
 	public FileConfiguration placeholder_config = YamlConfiguration.loadConfiguration(placeholder);
 	public FileConfiguration series_lore_config = YamlConfiguration.loadConfiguration(series_lore);
 	public FileConfiguration help_config = YamlConfiguration.loadConfiguration(help);
+
 	@Override
 	public void onEnable() {
 		// if the YAML disappear, generate one.
@@ -83,13 +84,13 @@ public class IceLegend extends JavaPlugin implements Listener{
 		this.getCommand("icelegend").setExecutor(new CommandIceLegend(this));
 		this.getCommand("skilltreegui").setExecutor(new CommandSkillTreeGUI(this));
 		this.getCommand("attributegui").setExecutor(new CommandAttributeGUI(this));
-		this.getCommand("skilltreegui").setExecutor(new CommandCombineSkillGUI(this)); 
+		this.getCommand("skilltreegui").setExecutor(new CommandCombineSkillGUI(this));
 		this.getCommand("classgui").setExecutor(new CommandClassGUI(this));
 		this.getCommand("selectclassgui").setExecutor(new CommandSelectClassGUI(this));
-		this.getCommand("itemcombinegui").setExecutor(new CommandItemCombineGUI(this)); 
+		this.getCommand("itemcombinegui").setExecutor(new CommandItemCombineGUI(this));
 		this.getCommand("bindskillgui").setExecutor(new CommandBindSkillGUI(this));
 		this.getCommand("itemskincombinegui").setExecutor(new CommandItemSkinCombineGUI(this));
-		this.getCommand("gemcombinegui").setExecutor(new CommandGemCombineGUI(this)); 
+		this.getCommand("gemcombinegui").setExecutor(new CommandGemCombineGUI(this));
 		this.getCommand("skillbar").setExecutor(new CommandSkillBar(this));
 		// Register the clicker event to the plugin.
 		Bukkit.getPluginManager().registerEvents(new ClickerEvent(), this);
