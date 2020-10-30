@@ -1,9 +1,14 @@
 package com.icelegend;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
@@ -116,5 +121,22 @@ public class IceLegend extends JavaPlugin implements Listener {
 	public String format(String str) {
 		return ChatColor.translateAlternateColorCodes('&', str.replace("%prefix%", msg_config.getString("prefix")));
 	}
-
+    @Override
+    public List<String> onTabComplete(CommandSender sender, Command cmd, String commandLabel, String[] args) {
+    	if (cmd.getName().equalsIgnoreCase("spawner")) {
+            if (args.length == 1) {
+                ArrayList<String> subcmds = new ArrayList<String>();
+                subcmds.add("help");
+                subcmds.add("reload");
+                
+                Collections.sort(subcmds);
+                
+                return subcmds;
+            }
+        }
+        
+        return null;
+    
+    	
+    }
 }

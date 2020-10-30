@@ -36,4 +36,5 @@ public class SubCommandHelp extends CommandBase<IceLegend> {
 		return false;
 	}
 
+
 }
