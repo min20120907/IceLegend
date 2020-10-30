@@ -1,4 +1,6 @@
-Test: #圖標ID
+Title: §a物品零件合成介面
+count: 45
+locate01: #圖標ID
   Name: '&e'
   Attribute: '' #屬性類別health mana speed armor critical_chance critical_rate attack Attack_speed
   LevelUpadd: 1 #每等增加多少屬性值
