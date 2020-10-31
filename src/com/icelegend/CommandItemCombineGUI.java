@@ -61,7 +61,7 @@ public class CommandItemCombineGUI implements CommandExecutor {
 				// sender.sendMessage("[Debug] Locate "+formatter.format(j)+": "+locate.get(j));
 				ItemMeta meta = mat.getItemMeta();
 				// apply the color format
-				formatList(lore);
+				ic.formatList(lore);
 				// set lore on item mat
 				meta.setLore(lore);
 				// set display name
@@ -83,10 +83,5 @@ public class CommandItemCombineGUI implements CommandExecutor {
 
 	}
 
-	List<String> formatList(List<String> a) {
-		List<String> tmp = new ArrayList<String>();
-		for (int i = 0; i < a.size(); i++)
-			tmp.add(ic.format(a.get(i)));
-		return tmp;
-	}
+	
 }

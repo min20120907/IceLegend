@@ -165,4 +165,10 @@ public class IceLegend extends JavaPlugin implements Listener {
     	 series_lore_config = YamlConfiguration.loadConfiguration(series_lore);
     	 help_config = YamlConfiguration.loadConfiguration(help);
    }
+	List<String> formatList(List<String> a) {
+		List<String> tmp = new ArrayList<String>();
+		for (int i = 0; i < a.size(); i++)
+			tmp.add(format(a.get(i)));
+		return tmp;
+	}
 }
