@@ -44,22 +44,20 @@ public class CommandItemSkinCombineGUI implements CommandExecutor {
 				// do the loop to put all the items in the different locations
 
 				for (int j = 0; j < locate.size(); j++) {
-					// sender.sendMessage("[Debug] Material "+formatter.format(2)+":
-					// "+ic.item_skin_com_config.getString("locate" + formatter.format(2) +
-					// ".Material")+"\nj: "+j);
+					sender.sendMessage("[Debug] Material "+formatter.format(i)+":"+ic.item_skin_com_config.getString("locate" + formatter.format(i) +
+					".Material")+"\nj: "+j);
 					// sender.sendMessage("[Debug] Locate Size "+formatter.format(i)+":
 					// "+locate.size());
 					String name = ic.item_skin_com_config.getString("locate" + formatter.format(i) + ".Name");
 					String use = ic.item_skin_com_config.getString("locate" + formatter.format(i) + ".Use");
-					ItemStack mat = new ItemStack(Material
-							.matchMaterial(ic.item_skin_com_config.getString("locate" + formatter.format(i) + ".Material")));
+					ItemStack mat = new ItemStack(Material.matchMaterial(ic.item_skin_com_config.getString("locate" + formatter.format(i) + ".Material")));
 					List<String> lore = (List<String>) ic.item_skin_com_config
 							.getList(("locate" + formatter.format(i) + ".Lore"));
 					// sender.sendMessage("[Debug] Locate "+formatter.format(j)+": "+locate.get(j));
 					ItemMeta meta = mat.getItemMeta();
 					// apply the color format
 					ic.formatList(lore);
-					// set lore on item mat
+					// set lore on itemmeta
 					meta.setLore(lore);
 					// set display name
 					meta.setDisplayName(name);

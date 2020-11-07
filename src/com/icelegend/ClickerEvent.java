@@ -1,6 +1,10 @@
 package com.icelegend;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -13,32 +17,70 @@ import org.bukkit.inventory.meta.ItemMeta;
 @SuppressWarnings("unused")
 public class ClickerEvent implements Listener {
 	IceLegend ic;
+
 	public ClickerEvent(IceLegend iceLegend) {
 		// TODO Auto-generated constructor stub
 		ic = iceLegend;
 	}
 
+	private static HashSet<Integer> c_slots = new HashSet<Integer>();
+
 	@EventHandler
 	public void InvenClick(InventoryClickEvent event) {
-		 Player player = (Player) event.getWhoClicked();
-		 
-		 Inventory inv = event.getInventory();
-		 Inventory open = event.getClickedInventory();
-		 ItemStack item = event.getCurrentItem();
-		 if(event.getView().getTitle().equalsIgnoreCase(ic.format(ic.item_com_config.getString("Title")))&&inv.equals(open)) {
-		if (event.getAction() == InventoryAction.PICKUP_ALL || event.getAction() == InventoryAction.DROP_ALL_CURSOR
-				|| event.getAction() == InventoryAction.DROP_ALL_SLOT
-				|| event.getAction() == InventoryAction.DROP_ONE_CURSOR
-				|| event.getAction() == InventoryAction.DROP_ONE_SLOT
-				|| event.getAction() == InventoryAction.CLONE_STACK
-				|| event.getAction() == InventoryAction.COLLECT_TO_CURSOR
-				|| event.getAction() == InventoryAction.HOTBAR_SWAP
-				|| event.getAction() == InventoryAction.HOTBAR_MOVE_AND_READD
-				|| event.getAction() == InventoryAction.PICKUP_HALF || event.getAction() == InventoryAction.PICKUP_ONE
-				|| event.getAction() == InventoryAction.PICKUP_SOME) {
-			event.setCancelled(true); // Assuming you want to lock all items.
+		Player player = (Player) event.getWhoClicked();
+
+		Inventory inv = event.getInventory();
+		Inventory open = event.getClickedInventory();
+		ItemStack item = event.getCurrentItem();
+		boolean opened = inv.equals(open);
+
+		// Custom Model Data:
+		// 0 -> takable
+		if (event.getView().getTitle().equalsIgnoreCase(ic.format(ic.item_com_config.getString("Title"))) && opened) {
+			opened = true;
+
+			if (event.isShiftClick() || event.isRightClick() || event.isLeftClick()) {
+				// player.sendMessage(String.valueOf(item.getItemMeta().getCustomModelData()));
+				try {
+					// player.sendMessage(c_slots.toString());
+					// player.sendMessage(item.toString());
+					// player.sendMessage(String.valueOf(c_slots.contains(event.getSlot())));
+					if (item.hasItemMeta()) {
+						if (item.getItemMeta().getDisplayName().equalsIgnoreCase("§a右鍵點擊進行合成")) {
+
+						}
+						if (item.getItemMeta().getDisplayName().equalsIgnoreCase("§a請放置零件於此處")) {
+							inv.setItem(event.getSlot(), event.getCursor());
+							event.setCurrentItem(null);
+							c_slots.add(event.getSlot());
+						}
+					}
+					if (item.getType().equals(Material.RED_STAINED_GLASS_PANE) && event.isLeftClick()) {
+						player.closeInventory();
+					}
+					if (c_slots.contains(event.getSlot())) {
+					} else {
+						event.setCancelled(true);
+					}
+				} catch (NullPointerException e) {
+					if (!c_slots.contains(event.getSlot())) {
+						event.setCancelled(true);
+					}
+
+					player.sendMessage("NULL");
+				}
+			}
+
 		}
-		 }
+
+	}
+
+	public int getItemLocation(Inventory inv, ItemStack item) {
+		for (int i = 0; i < inv.getSize(); i++)
+			if (inv.getItem(i).equals(item))
+				return i;
+
+		return -1;
 	}
 
 }

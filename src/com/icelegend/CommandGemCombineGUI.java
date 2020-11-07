@@ -20,6 +20,7 @@ public class CommandGemCombineGUI implements CommandExecutor {
 		ic = iceLegend;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// TODO Auto-generated method stub
@@ -28,7 +29,7 @@ public class CommandGemCombineGUI implements CommandExecutor {
 			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.gemcombinegui")));
 			// START OF GUI
 			DecimalFormat formatter = new DecimalFormat("00");
-			// sender.sendMessage("[Debug] Title: "+ic.gem_com_config.getString("Title"));
+			 sender.sendMessage("[Debug] locate01.Name: "+ic.gem_com_config.getString("locate01.Name"));
 
 			Inventory gui = Bukkit.createInventory(null, Integer.parseInt(ic.gem_com_config.getString("count")),
 					ic.gem_com_config.getString("Title"));
@@ -43,7 +44,7 @@ public class CommandGemCombineGUI implements CommandExecutor {
 				List<Integer> locate = (List<Integer>) ic.gem_com_config
 						.getList(("locate" + formatter.format(i) + ".Locate"));
 				// do the loop to put all the items in the different locations
-
+				//sender.sendMessage("first item: "+String.valueOf(locate.get(0)));
 				for (int j = 0; j < locate.size(); j++) {
 					// sender.sendMessage("[Debug] Material "+formatter.format(2)+":
 					// "+ic.gem_com_config.getString("locate" + formatter.format(2) +
