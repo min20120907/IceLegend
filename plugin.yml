@@ -51,3 +51,39 @@ commands:
       description: open gem combine interface
       usage: /<command>
       permission: IceLegend.command.skillbar
+   getitem:
+      description: get specific item
+      usage: /<command>
+      permission: IceLegend.command.getitem
+   getgem:
+      description: get specific gem
+      usage: /<command>
+      permission: IceLegend.command.getgem
+   getskin:
+      description: get specific skin
+      usage: /<command>
+      permission: IceLegend.command.getskin
+   getskillpoint:
+      description: get skill point
+      usage: /<command>
+      permission: IceLegend.command.getskillpoint
+   classopen:
+      description: open locked class
+      usage: /<command>
+      permission: IceLegend.command.classopen
+   giveitem:
+      description: give specific item
+      usage: /<command>
+      permission: IceLegend.command.giveitem
+   givegem:
+      description: give specific gem
+      usage: /<command>
+      permission: IceLegend.command.givegem
+   givemana:
+      description: give specific mana
+      usage: /<command>
+      permission: IceLegend.command.givemana
+   giveskin:
+      description: give specific skin
+      usage: /<command>
+      permission: IceLegend.command.giveskin

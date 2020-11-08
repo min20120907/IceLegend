@@ -13,6 +13,8 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Event;
 import org.bukkit.event.Listener;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class IceLegend extends JavaPlugin implements Listener {
@@ -50,7 +52,9 @@ public class IceLegend extends JavaPlugin implements Listener {
 	public FileConfiguration placeholder_config = YamlConfiguration.loadConfiguration(placeholder);
 	public FileConfiguration series_lore_config = YamlConfiguration.loadConfiguration(series_lore);
 	public FileConfiguration help_config = YamlConfiguration.loadConfiguration(help);
-
+	//components elements
+	public ArrayList<ItemStack> components = new ArrayList<ItemStack>();
+	public ArrayList<ItemMeta> components_meta = new ArrayList<ItemMeta>();
 	@Override
 	public void onEnable() {
 		// if the YAML disappear, generate one.
@@ -108,8 +112,20 @@ public class IceLegend extends JavaPlugin implements Listener {
 		this.getCommand("itemskincombinegui").setExecutor(new CommandItemSkinCombineGUI(this));
 		this.getCommand("gemcombinegui").setExecutor(new CommandGemCombineGUI(this));
 		this.getCommand("skillbar").setExecutor(new CommandSkillBar(this));
+		//new commands
+		this.getCommand("getitem").setExecutor(new CommandGetItem(this));
+		this.getCommand("getgem").setExecutor(new CommandGetGem(this));
+		this.getCommand("getskin").setExecutor(new CommandGetSkin(this));
+		this.getCommand("getskillpoint").setExecutor(new CommandGetSkillPoint(this));
+		this.getCommand("classopen").setExecutor(new CommandClassOpen(this));
+		this.getCommand("giveitem").setExecutor(new CommandGiveItem(this));
+		this.getCommand("givegem").setExecutor(new CommandGiveGem(this));
+		this.getCommand("givemana").setExecutor(new CommandGiveMana(this));
+		this.getCommand("giveskin").setExecutor(new CommandGiveSkin(this));
 		// Register the clicker event to the plugin.
 		Bukkit.getPluginManager().registerEvents(new ClickerEvent(this), this);
+		// Register the items...
+		
 		
 		getLogger().info(format(msg_config.getString("Messages.loadplugin")));
 	}

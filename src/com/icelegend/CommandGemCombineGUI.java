@@ -15,6 +15,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class CommandGemCombineGUI implements CommandExecutor {
 	IceLegend ic;
+
 	public CommandGemCombineGUI(IceLegend iceLegend) {
 		// TODO Auto-generated constructor stub
 		ic = iceLegend;
@@ -25,18 +26,18 @@ public class CommandGemCombineGUI implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// TODO Auto-generated method stub
 
-		if(sender.hasPermission("IceLegend.command.gemcombinegui")) {
+		if (sender.hasPermission("IceLegend.command.gemcombinegui")) {
 			sender.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.gemcombinegui")));
 			// START OF GUI
 			DecimalFormat formatter = new DecimalFormat("00");
-			 sender.sendMessage("[Debug] locate01.Name: "+ic.gem_com_config.getString("locate01.Name"));
+			sender.sendMessage("[Debug] locate01.Name: " + ic.gem_com_config.getString("locate01.Name"));
 
 			Inventory gui = Bukkit.createInventory(null, Integer.parseInt(ic.gem_com_config.getString("count")),
 					ic.gem_com_config.getString("Title"));
-			
+
 			// proclaim the sender as a player
 			Player player = (Player) sender;
-			//player.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.itemcombinegui")));
+			// player.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.itemcombinegui")));
 			// This opens the inventory
 			int i = 1;
 			while (ic.gem_com_config.getString("locate" + formatter.format(i)) != null) {
@@ -44,7 +45,7 @@ public class CommandGemCombineGUI implements CommandExecutor {
 				List<Integer> locate = (List<Integer>) ic.gem_com_config
 						.getList(("locate" + formatter.format(i) + ".Locate"));
 				// do the loop to put all the items in the different locations
-				//sender.sendMessage("first item: "+String.valueOf(locate.get(0)));
+				// sender.sendMessage("first item: "+String.valueOf(locate.get(0)));
 				for (int j = 0; j < locate.size(); j++) {
 					// sender.sendMessage("[Debug] Material "+formatter.format(2)+":
 					// "+ic.gem_com_config.getString("locate" + formatter.format(2) +
