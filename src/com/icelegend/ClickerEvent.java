@@ -34,51 +34,48 @@ public class ClickerEvent implements Listener {
 		Inventory open = event.getClickedInventory();
 		ItemStack item = event.getCurrentItem();
 		boolean opened = inv.equals(open);
-		
+
 		// Custom Model Data:
 		// 0 -> takable
-		if (event.getView().getTitle().equalsIgnoreCase(ic.format(ic.item_com_config.getString("Title"))) && opened) {
+		if (event.getView().getTitle().equalsIgnoreCase(ic.format(ic.item_com_config.getString("Title")))
+				&& inv.equals(open)) {
 			opened = true;
 			if (event.isShiftClick() || event.isRightClick() || event.isLeftClick()) {
 				// player.sendMessage(String.valueOf(item.getItemMeta().getCustomModelData()));
 				try {
-					// player.sendMessage(c_slots.toString());
-					// player.sendMessage(item.toString());
-					// player.sendMessage(String.valueOf(c_slots.contains(event.getSlot())));
+					player.sendMessage(c_slots.toString());
+					player.sendMessage(item.toString());
+					player.sendMessage(String.valueOf(c_slots.contains(event.getSlot())));
 					if (item.hasItemMeta()) {
-						if(ic.components.contains(item)||ic.components_meta.contains(item.getItemMeta())){
-							
-						}
-						if (item.getItemMeta().getDisplayName().equalsIgnoreCase("§a右鍵點擊進行合成")) {
+						if (ic.components.contains(item) || ic.components_meta.contains(item.getItemMeta())) {
 
-						}
-						if (item.getItemMeta().getDisplayName().equalsIgnoreCase("§a請放置零件於此處")) {
+						} else if (item.getItemMeta().getDisplayName().equalsIgnoreCase("§a右鍵點擊進行合成")) {
+
+						} else if (item.getItemMeta().getDisplayName().equalsIgnoreCase("§a請放置零件於此處")) {
 							inv.setItem(event.getSlot(), event.getCursor());
-							player.setItemOnCursor(null);
+							event.setCurrentItem(null);
 							c_slots.add(event.getSlot());
+						} else {
+							event.setCancelled(true);
 						}
-					}
-					if (item.getType().equals(Material.RED_STAINED_GLASS_PANE) && event.isLeftClick()) {
+					} else if (item.getType().equals(Material.RED_STAINED_GLASS_PANE) && event.isLeftClick()) {
 						player.closeInventory();
-					}
-					
-					 else {
+					} else if (c_slots.contains(event.getSlot())) {
+
+					} else {
 						event.setCancelled(true);
 					}
 				} catch (NullPointerException e) {
 					if (!c_slots.contains(event.getSlot())) {
 						event.setCancelled(true);
 					}
-					
-					//player.sendMessage("NULL");
+
+					player.sendMessage("NULL");
 				}
-			
+
 			}
 		}
 	}
-
-
-	
 
 	public int getItemLocation(Inventory inv, ItemStack item) {
 		for (int i = 0; i < inv.getSize(); i++)

@@ -18,6 +18,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class IceLegend extends JavaPlugin implements Listener {
+
+	
 	// initialize the yaml files
 	public File msg = new File(this.getDataFolder(), "Messages.yml");
 	public File attr_gui = new File(this.getDataFolder(), "AttributeGUI.yml");
@@ -55,6 +57,7 @@ public class IceLegend extends JavaPlugin implements Listener {
 	//components elements
 	public ArrayList<ItemStack> components = new ArrayList<ItemStack>();
 	public ArrayList<ItemMeta> components_meta = new ArrayList<ItemMeta>();
+	public String[] ComponentType = {"Melee", "Magic", "Shoot", "Defence"};
 	@Override
 	public void onEnable() {
 		// if the YAML disappear, generate one.
@@ -181,6 +184,10 @@ public class IceLegend extends JavaPlugin implements Listener {
     	 series_lore_config = YamlConfiguration.loadConfiguration(series_lore);
     	 help_config = YamlConfiguration.loadConfiguration(help);
    }
+	// Attributes String proclaiming
+	public String getAttrDesc(FileConfiguration c, String str) {
+		return attr_name_config.getString("Attribute."+c.getString(str));
+	}
 	List<String> formatList(List<String> a) {
 		List<String> tmp = new ArrayList<String>();
 		for (int i = 0; i < a.size(); i++)

@@ -1,5 +1,4 @@
 package com.icelegend;
-
 import java.text.DecimalFormat;
 import java.util.List;
 
