@@ -1,4 +1,5 @@
 package com.icelegend;
+
 import java.text.DecimalFormat;
 import java.util.List;
 
@@ -39,6 +40,7 @@ public class CommandGemCombineGUI implements CommandExecutor {
 			// player.sendMessage(ic.format(ic.msg_config.getString("Messages.Command.itemcombinegui")));
 			// This opens the inventory
 			int i = 1;
+			try {
 			while (ic.gem_com_config.getString("locate" + formatter.format(i)) != null) {
 				// Proclaim the attribute variables
 				List<Integer> locate = (List<Integer>) ic.gem_com_config
@@ -46,11 +48,9 @@ public class CommandGemCombineGUI implements CommandExecutor {
 				// do the loop to put all the items in the different locations
 				// sender.sendMessage("first item: "+String.valueOf(locate.get(0)));
 				for (int j = 0; j < locate.size(); j++) {
-					// sender.sendMessage("[Debug] Material "+formatter.format(2)+":
-					// "+ic.gem_com_config.getString("locate" + formatter.format(2) +
-					// ".Material")+"\nj: "+j);
-					// sender.sendMessage("[Debug] Locate Size "+formatter.format(i)+":
-					// "+locate.size());
+					sender.sendMessage("[Debug] Material " + formatter.format(2) + ":"
+							+ ic.gem_com_config.getString("locate" + formatter.format(2) + ".Material") + "\nj: " + j);
+					sender.sendMessage("[Debug] Locate Size " + formatter.format(i) + ":" + locate.size());
 					String name = ic.gem_com_config.getString("locate" + formatter.format(i) + ".Name");
 					String use = ic.gem_com_config.getString("locate" + formatter.format(i) + ".Use");
 					ItemStack mat = new ItemStack(Material
@@ -60,6 +60,7 @@ public class CommandGemCombineGUI implements CommandExecutor {
 					// sender.sendMessage("[Debug] Locate "+formatter.format(j)+": "+locate.get(j));
 					ItemMeta meta = mat.getItemMeta();
 					// apply the color format
+					player.sendMessage("locate" + formatter.format(i));
 					ic.formatList(lore);
 					// set lore on item mat
 					meta.setLore(lore);
@@ -72,6 +73,9 @@ public class CommandGemCombineGUI implements CommandExecutor {
 				}
 
 				i++;
+			}}
+			catch(NullPointerException ne) {
+				
 			}
 			// open gui to the user
 			player.openInventory(gui);

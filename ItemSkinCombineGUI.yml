@@ -56,7 +56,7 @@ locate04:
 locate05:
   Name: '&a造型放置處'
   Use: 'skin' #item為放置武器
-  Material: orenge_stained_glass_pane
+  Material: orange_stained_glass_pane
   Lore:
   - '&7'
   Locate: 

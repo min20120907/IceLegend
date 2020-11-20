@@ -1,63 +1,71 @@
 Title: §a物品零件合成介面
 count: 45
 locate01: #圖標ID 
-  Name: '&a'
-  Use: 'none' #none為無功能 
-  Material: Black_stained_glass_pane
-  Locate: 
-  - 0
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-  - 7
-  - 8
-  - 9
-  - 10
-  - 12
-  - 14
-  - 16
-  - 17
-  - 19
-  - 20
-  - 21
-  - 22
-  - 23
-  - 24
-  - 25
-  Lore:
-  - ''
+   Name: '&a'
+   Use: none #none為無功能 
+   Material: Black_stained_glass_pane
+   Locate:
+   - 0
+   - 1
+   - 2
+   - 3
+   - 4
+   - 5
+   - 6
+   - 7
+   - 8
+   - 9
+   - 10
+   - 12
+   - 14
+   - 16
+   - 17
+   - 19
+   - 20
+   - 21
+   - 22
+   - 23
+   - 24
+   - 25
+   Lore:
+   - '&7'
 locate02: #圖標ID 
-  Name: '&c離開介面'
-  Use: 'BACK' #back為退出介面 
-  Material: RED_stained_glass_pane
-  Locate: 
-  - 18
-  Lore:
-  - ''
+   Name: '&c離開介面'
+   Use: BACK #back為退出介面 
+   Material: RED_stained_glass_pane
+   Locate:
+   - 18
+   Lore:
+   - '&7'
 locate03: #圖標ID 
-  Name: '&a確認合成'
-  Use: 'YES' #YES為確認合成
-  Material: GREEN_stained_glass_pane
-  Locate: 
-  - 26
+   Name: '&a確認合成'
+   Use: YES #YES為確認合成
+   Material: GREEN_stained_glass_pane
+   Locate:
+   - 26
+   Lore:
+   - '&7'
 locate04:
-  Name: '&a武器放置處'
-  Use: 'item' #item為放置武器
-  Material: BLUE_stained_glass_pane
-  Locate: 
-  - 11
+   Name: '&a武器放置處'
+   Use: item #item為放置武器
+   Material: BLUE_stained_glass_pane
+   Locate:
+   - 11
+   Lore:
+   - '&7'
 locate05:
-  Name: '&a寶石放置處'
-  Use: 'gem' #gem為放置寶石
-  Material: orenge_stained_glass_pane
-  Locate: 
-  - 13
+   Name: '&a寶石放置處'
+   Use: gem #gem為放置寶石
+   Material: orange_stained_glass_pane
+   Locate:
+   - 13
+   Lore:
+   - '&7'
 locate06:
-  Name: '&a'
-  Use: 'view' #view為預覽合成
-  Material: air
-  Locate: 
-  - 15
+   Name: '&a'
+   Use: view #view為預覽合成
+   Material: air
+   Locate:
+   - 15
+   Lore:
+   - '&7'
