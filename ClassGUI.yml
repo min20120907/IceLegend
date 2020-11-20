@@ -2,54 +2,99 @@ locate01: #圖標ID
   Name: ''
   Use: 'none' #none為無功能 next 下一頁 back 上一頁 class 偵測擁有的光能 每頁由Class01排到Class08
   Material: White_stained_glass_pane
-  Locate: '1,2,3,4,5,6,7,8,9,10,12,14,16,18,19,20,21,22,23,24,25,26,27,28,30,32,34,36,38,39,40,41,42,43,44'
+  Locate: 
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 11
+  - 13
+  - 15
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 29
+  - 31
+  - 33
+  - 35
+  - 37
+  - 38
+  - 39
+  - 40
+  - 41
+  - 42
+  - 43
 locate02: 
   Name: '&c上一頁'
   Use: 'back'
   Material: Purple_stained_glass_pane
-  Locate: '37'  
+  Locate: 
+  - 27   
 locate03: 
   Name: '&b下一頁'
   Use: 'next'
   Material: Red_stained_glass_pane
-  Locate: '37'  
+  Locate: 
+  - 36  
 locate04:
   Name: '&b尚無光能' #沒有光能的時候為這樣 有的時候參照Class.yml中 該光能的敘述
   Use: 'class'
   Material: Red_stained_glass_pane
-  Locate: '11'   
+  Locate: 
+  - 10  
 locate05:
   Name: '&b尚無光能' #沒有光能的時候為這樣
   Use: 'class'
   Material: Red_stained_glass_pane
-  Locate: '13'   
+  Locate: 
+  - 12  
 locate06:
   Name: '&b尚無光能' #沒有光能的時候為這樣
   Use: 'class'
   Material: Red_stained_glass_pane
-  Locate: '15'   
+  Locate: 
+  - 14  
 locate07:
   Name: '&b尚無光能' #沒有光能的時候為這樣
   Use: 'class'
   Material: Red_stained_glass_pane
-  Locate: '17'    
+  Locate: 
+  - 16  
 locate08:
   Name: '&b尚無光能' #沒有光能的時候為這樣
   Use: 'class'
   Material: Red_stained_glass_pane
-  Locate: '29'    
+  Locate: 
+  - 28  
 locate09:
   Name: '&b尚無光能' #沒有光能的時候為這樣
   Use: 'class'
   Material: Red_stained_glass_pane
-  Locate: '31' 
+  Locate: 
+  - 30  
 locate10:
   Name: '&b尚無光能' #沒有光能的時候為這樣
   Use: 'class'
   Material: Red_stained_glass_pane
-  Locate: '33'  
+  Locate: 
+  - 32  
 locate11:
   Name: '&b尚無光能' #沒有光能的時候為這樣
   Use: 'class'
   Material: Red_stained_glass_pane
-  Locate: '35'     
+  Locate: 
+  - 34  

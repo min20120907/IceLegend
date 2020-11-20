@@ -1,5 +1,5 @@
 #完整零件範本
-com1:
+Example:
    Name: 火焰 #零件名稱
    Type: Melee #物品零件種類 分為Melee近戰 Magic 魔法 Shoot 射擊 Defence 防禦 (部分數值將僅限不同種類武器讀取)
    Locate: 1 #1~8 為合成時部位放置的位置 詳見ItemCombineGui.yml 

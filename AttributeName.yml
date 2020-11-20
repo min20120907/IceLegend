@@ -1,54 +1,54 @@
-Attribute: #名稱定義
-   Attack: 攻擊力
-   Attack_speed: 攻擊速度
-   Piercing: 真實傷害
-   Magic: 魔法傷害
-   Mana_cost: 魔力消耗
-   Shoot: 遠程傷害
-   Range: 射程
-   Critical_chance: 爆擊機率
-   Critical_rate: 爆擊倍率
-   Arthropod: 節肢動物傷害
-   Undead: 不死生物傷害
-   Mob: 怪物傷害
-   Nether: 地獄生物傷害
-   Water: 水中生物傷害
-   Player: 對玩家傷害
-   Drain_chance: 吸血機率
-   Drain_rate: 吸血倍率
-   Light_chance: 喚雷機率
-   Light_damage: 雷電傷害
-   Slow_chance: 緩速效果機率
-   Slow_rate: 緩速效果倍率
-   poison_chance: 中毒效果機率
-   poison_damage: 中毒效果傷害
-   Confuse_chance: 噁心效果機率
-   Confuse_level: 噁心效果等級
-   Float_chance: 漂浮效果機率
-   Float_level: 漂浮效果等級
-   Burn_chance: 著火機率
-   Burn_rate: 著火傷害
-   Freeze_chance: 冰凍機率
-   Freeze_time: 冰凍時間
-   Armor: 護甲
-   Armor_thoughness: 護甲韌性
-   Mana: 魔力
-   Health: 血量
-   Speed: 速度
-   Rebound_chance: 反彈機率
-   Rebound_rate: 反彈倍率
-   Rodge_chance: 迴避機率
-   Physic_defence: 物理減傷
-   Magic_defence: 魔法減傷
-   Undead_defence: 不死怪物減傷
-   Water_defence: 水中生物減傷
-   Nether_defence: 地獄怪物減傷
-   Mob_defence: 怪物減傷
-   Player_defence: 玩家傷害減傷
-   Arthropod_defence: 節肢動物減傷
-   Light_defence: 雷電傷害減傷
-   Slow_defence: 緩速韌性
-   Poison_defence: 中毒減傷
-   Burn_defence: 著火減傷
-   Float_defence: 漂浮韌性
-   Freeze_defence: 凍結韌性
+attribute: #名稱定義
+   attack: §r䄐 攻擊力
+   attack_speed: §r䄺 攻擊速度
+   piercing: §r䄘 真實傷害
+   magic: §r䄎 魔法傷害
+   mana_cost: §r䄬 魔力消耗
+   shoot: §r䄌 遠程傷害
+   range: §r䄏 射程
+   critical_chance: §r䄿 爆擊機率
+   critical_rate: §r䅀 爆擊倍率
+   arthropod: §r䄁 節肢動物傷害
+   undead: §r不死生物傷害
+   mob: §r䄂 怪物傷害
+   nether: §r䄀 地獄生物傷害
+   water: §r䄅 水中生物傷害
+   player: §r䄵 對玩家傷害
+   drain_chance: §r䄛 吸血機率
+   drain_rate: §r䅁 吸血倍率
+   light_chance: §r䄗 喚雷機率
+   light_damage: §r䄖 雷電傷害
+   slow_chance: §r䄦 緩速機率
+   slow_rate: §r䄥 緩速倍率
+   poison_chance: §r䄢 中毒機率
+   poison_damage: §r䄡 中毒傷害
+   confuse_chance: §r䄶 噁心機率
+   confuse_level: §r䄠 噁心等級
+   float_chance: §r 䄞 漂浮機率
+   float_level: §r䄞 漂浮等級
+   burn_chance: §r䄾 著火機率
+   burn_rate: §r䄕 著火傷害
+   freeze_chance: §r䄜 冰凍機率
+   freeze_time: §r䄜 冰凍時間
+   armor: §r䄩 護甲
+   armor_thoughness: §r䄩 護甲韌性
+   mana: §r䄬 魔力
+   health: §r䄪 血量
+   speed: §r䄷 速度
+   rebound_chance: §r䄣 反彈機率
+   rebound_rate: §r䄣 反彈倍率
+   rodge_chance: §r䄤 迴避機率
+   physic_defence: §r䄨 物理減傷
+   magic_defence: §r䄲 魔法減傷
+   undead_defence: §r䄋 不死怪物減傷
+   water_defence: §r䄍 水中生物減傷
+   nether_defence: §r䄽 地獄怪物減傷
+   mob_defence: §r䄽 怪物減傷
+   player_defence: §r䄉 玩家傷害減傷
+   arthropod_defence: §r䄆 節肢動物減傷
+   light_defence: §r䄈 雷電傷害減傷
+   slow_defence: §r䄤 緩速韌性
+   poison_defence: §r䄋 中毒減傷
+   burn_defence: §r䄃 著火減傷
+   float_defence: §r䄟 漂浮韌性
+   freeze_defence: §r䄝 凍結韌性

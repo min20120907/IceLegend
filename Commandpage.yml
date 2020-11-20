@@ -1,7 +1,7 @@
 Page1:
    messages:
    - '&b冰晶系統 &8›› &6指令清單'
-   - '&7&m              (亮藍色)第一頁&7&m              '
+   - '&7&m                        &b第一頁&7&m                        '
    - '&b/skilltreegui &7開啟天賦樹介面'
    - '&b/attributegui &7開啟屬性點介面'
    - '&b/classgui &7開啟光能介面'
@@ -12,10 +12,10 @@ Page1:
    - '&b/itemskincombinegui &7開啟造型綁定介面'
    - '&b/gemcombinegui &7開啟寶石鑲嵌介面'
    - '&b/icelegend reload &7重新讀取檔案'
-   - '&7&m              (亮藍色)第一頁&7&m              '
+   - '&7&m                        &b第一頁&7&m                        '
 Page2:
    messages:
-   - '&7&m              (亮藍色)第二頁&7&m              '
+   - '&7&m                        &b第二頁&7&m                        '
    - '&b/getattributepoint {amount} &7獲取屬性點'
    - '&b/getskillpoint {amount} &7獲取技能點'
    - '&b/getitem {item} &7獲取物品零件'
@@ -24,8 +24,8 @@ Page2:
    - '&b/classopen {player} {class} &7解鎖光能'
    - '&b/giveskillpoint {player} {amount} &7給予...技能點'
    - '&b/giveattributepoint {player} {amount} &7給予...屬性點'
-   - '&b/givemana {player} {amount} &7&7給予...魔力'
-   - '&b/giveitem {player} {item} &7&7給予...物品零件'
-   - '&b/givegem {player} {gem} &7&7給予...寶石'
+   - '&b/givemana {player} {amount} &7給予...魔力'
+   - '&b/giveitem {player} {item} &7給予...物品零件'
+   - '&b/givegem {player} {gem} &7給予...寶石'
    - '&b/giveskin {player} {skin} &7'
-   - '&7&m              (亮藍色)第二頁&7&m              '
+   - '&7&m                        &b第二頁&7&m                        '

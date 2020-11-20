@@ -28,21 +28,28 @@ public class CommandGiveItem implements CommandExecutor {
 		String destItem = args[1];
 		int count = 1;
 		ItemStack i = new ItemStack(Material.AIR);
-		DecimalFormat formatter = new DecimalFormat("00");
+		p.sendMessage("Comlist:");
+
 		for (String com : ic.ComponentType) {
-			while (ic.item_mat_config.getString("Type." + com + "." + formatter.format(count) + ".material") != null) {
-				ItemStack item = new ItemStack(Material.matchMaterial(
-						ic.item_mat_config.getString("Type." + com + formatter.format(count) + ".material")));
-				
-				if (destItem.equalsIgnoreCase(ic.item_com_config.getString("Type."+com))) {
+
+			while (ic.item_mat_config.getString("Type." + com + "." + count + ".material") != null) {
+
+				ItemStack item = new ItemStack(Material
+						.matchMaterial(ic.item_mat_config.getString("Type." + com + "." + count + ".material")));
+				p.sendMessage(item.toString());
+				p.sendMessage(com);
+				p.sendMessage("args1: "+args[1]);
+				if (Integer.parseInt(destItem)==count) {
+
 					ItemMeta im = item.getItemMeta();
-					im.setUnbreakable(Boolean.parseBoolean(ic.item_mat_config.getString(
-							ic.item_mat_config.getString("Type." + com + formatter.format(count) + ".Unbreakable"))));
-					im.setCustomModelData(Integer.parseInt(ic.item_mat_config.getString("Type." + com + formatter.format(count) + ".Data")));
+					im.setUnbreakable(Boolean.parseBoolean(ic.item_mat_config
+							.getString(ic.item_mat_config.getString("Type." + com + "." + count + ".Unbreakable"))));
+					im.setCustomModelData(
+							Integer.parseInt(ic.item_mat_config.getString("Type." + com + "." + count + ".Data")));
 					Damageable dm = (Damageable) im;
-					dm.setDamage(Integer.parseInt(
-							ic.item_mat_config.getString("Type." + com + formatter.format(count) + ".Durability")));
-					
+					dm.setDamage(Integer
+							.parseInt(ic.item_mat_config.getString("Type." + com + "." + count + ".Durability")));
+
 					item.setItemMeta((ItemMeta) dm);
 					i = item;
 					break;
@@ -50,6 +57,7 @@ public class CommandGiveItem implements CommandExecutor {
 				count++;
 			}
 		}
+		p.sendMessage("--------END OF COM--------");
 		if (!i.equals(new ItemStack(Material.AIR)))
 			p2.getInventory().addItem(i);
 		else

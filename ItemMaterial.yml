@@ -4,9 +4,9 @@ Type:
       material: Diamond_sword #物品
       Data: 0 #CustomModelData顯示的材質
       Durability: 0 #耐久度顯示的材質
-      Unbreakble: true #無法破壞 隱藏耐久度
+      Unbreakable: true #無法破壞 隱藏耐久度
     02:
       material: Diamond_sword #物品
       Data: 1 #CustomModelData顯示的材質
       Durability: 0 #耐久度顯示的材質
-      Unbreakble: true #無法破壞 隱藏耐久度      
+      Unbreakable: true #無法破壞 隱藏耐久度      
