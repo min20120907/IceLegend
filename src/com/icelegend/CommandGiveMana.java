@@ -1,10 +1,14 @@
 package com.icelegend;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.Damageable;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public class CommandGiveMana implements CommandExecutor {
 	IceLegend ic;
@@ -16,10 +20,8 @@ public class CommandGiveMana implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// TODO Auto-generated method stub
-		Player p = (Player) sender;
-		Player p2 = Bukkit.getPlayer(args[0]);
-		p.sendMessage(ic.msg_config.getString("Messages.givemana"));
-		return true;
+		// TODO Auto-generated method stub
+				return true;
 	}
 
 }

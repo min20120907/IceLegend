@@ -11,8 +11,10 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerItemHeldEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -127,14 +129,17 @@ public class IceLegend extends JavaPlugin implements Listener {
 		this.getCommand("giveskin").setExecutor(new CommandGiveSkin(this));
 		// Register the clicker event to the plugin.
 		Bukkit.getPluginManager().registerEvents(new ClickerEvent(this), this);
+
 		// Register the items...
 		
 		
 		getLogger().info(format(msg_config.getString("Messages.loadplugin")));
 	}
-
-	
-
+	// The event listener that will be triggered, when the player switch its item.
+    public void onItemSwitch(PlayerItemHeldEvent event) {
+    	Player p = event.getPlayer();
+    	ItemStack item = p.getInventory().getItem(event.getNewSlot());
+    }
 	// Fired when plugin is disabled
 	@Override
 	public void onDisable() {
