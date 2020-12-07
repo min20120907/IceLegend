@@ -4,9 +4,13 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.attribute.AttributeModifier;
+import org.bukkit.attribute.AttributeModifier.Operation;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -15,6 +19,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerItemHeldEvent;
+import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -139,6 +144,22 @@ public class IceLegend extends JavaPlugin implements Listener {
     public void onItemSwitch(PlayerItemHeldEvent event) {
     	Player p = event.getPlayer();
     	ItemStack item = p.getInventory().getItem(event.getNewSlot());
+    	ItemMeta im  = item.getItemMeta();
+    	List<String> attr_list = (List<String>) attr_name_config.getList("attribute");
+    	AttributeModifier mod = new AttributeModifier(UUID.randomUUID(), attr_list.get(0),0.0, Operation.ADD_NUMBER, EquipmentSlot.HAND);
+    	for (String s: attr_list) {
+    		switch(s) {
+    		case "attack":
+    			s = "generic.attack_damage";
+    			break;
+    		case "attack_speed":
+    			s = "generic.attack_speed";
+    			break;
+    		
+    		}
+    	}
+    	
+    	im.addAttributeModifier(Attribute.GENERIC_FLYING_SPEED, mod);
     }
 	// Fired when plugin is disabled
 	@Override
