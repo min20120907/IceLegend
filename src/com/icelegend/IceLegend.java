@@ -4,8 +4,11 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
@@ -174,7 +177,35 @@ public class IceLegend extends JavaPlugin implements Listener {
 				break;
 			case "mana_cost":
 				break;
-			case "":
+			case "critical_chance":
+				break;
+			case "critical_rate":
+				break;
+			case "arthropod":
+				break;
+			case "mob":
+				break;
+			case "nether":
+				break;
+			case "water":
+				break;
+			case "player":
+				break;
+			case "drain_chance":
+				break;
+			case "drain_rate":
+				break;
+			case "light_chance":
+				break;
+			case "light_damage":
+				break;
+			case "slow_chance":
+				break;
+			case "slow_rate":
+				break;
+			case "poison_chance":
+				break;
+			
 			}
 		}
 		AttributeModifier mod = new AttributeModifier(UUID.randomUUID(), attr_list.get(0),
@@ -188,23 +219,49 @@ public class IceLegend extends JavaPlugin implements Listener {
 		if (damager instanceof Player) {
 			Player p = (Player) damager;
 			ItemStack item = p.getInventory().getItemInMainHand();
+			
+			
 			Map<Attribute, Collection<AttributeModifier>> attr = item.getItemMeta().getAttributeModifiers().asMap();
-
+			Map<String,Double> name_list = new HashMap<String,Double>();
+			for (Entry<Attribute, Collection<AttributeModifier>> entry:attr.entrySet()) {
+				//String name = entry.getKey().name();
+				Iterator value = entry.getValue().iterator();
+				for(AttributeModifier am: item.getItemMeta().getAttributeModifiers(entry.getKey())) {
+					double v = am.getAmount();
+					String name = am.getName();
+					name_list.put(name, v);
+				}
+			}
+			
 			if (victim instanceof Piglin || victim instanceof MagmaCube || victim instanceof WitherSkeleton
 					|| victim instanceof Strider || victim instanceof Blaze || victim instanceof PiglinBrute
 					|| victim instanceof Zoglin || victim instanceof Hoglin) // Nether
 			{
-
+				for(Entry<String, Double> entry : name_list.entrySet()) 
+					if(entry.getKey().equals("nether")) 
+						event.setDamage(event.getDamage()+entry.getValue());
 			} else if (victim instanceof Mob) { // Mob
-
+				for(Entry<String, Double> entry : name_list.entrySet()) 
+					if(entry.getKey().equals("mob")) 
+						event.setDamage(event.getDamage()+entry.getValue());
 			} else if (victim instanceof Player) { // Player
-
+				for(Entry<String, Double> entry : name_list.entrySet()) 
+					if(entry.getKey().equals("player")) 
+						event.setDamage(event.getDamage()+entry.getValue());
 			} else if (victim instanceof LivingEntity) {
 				LivingEntity v = (LivingEntity) victim;
 				if (v.getCategory().equals(EntityCategory.ARTHROPOD)) { // Arthropod
-
+					for(Entry<String, Double> entry : name_list.entrySet()) 
+						if(entry.getKey().equals("arthopod")) 
+							event.setDamage(event.getDamage()+entry.getValue());
 				} else if (v.getCategory().equals(EntityCategory.UNDEAD)) { // Undead
-
+					for(Entry<String, Double> entry : name_list.entrySet()) 
+						if(entry.getKey().equals("undead")) 
+							event.setDamage(event.getDamage()+entry.getValue());
+				}else if(v.getCategory().equals(EntityCategory.WATER)) {	// Water
+					for(Entry<String, Double> entry : name_list.entrySet()) 
+						if(entry.getKey().equals("water")) 
+							event.setDamage(event.getDamage()+entry.getValue());
 				}
 			}
 		}
