@@ -10,11 +10,11 @@ Example:
    Attribute: #attribute將會作為敘述直接顯示在零件以及後續組裝的武器上
 #設定零件數值 組裝時將依照組裝零件順序 依序將預設數值名稱及數值排上敘述 數值敘述名稱參考 AttributeName.yml
 #(常數)-直接係數 (百分比)每100%為觸發一次額外傷害的機率 最高無上限 400%=打4次額外100%傷害(可相容爆擊機率)(未標註者皆可突破100%百分比) #如有註解最高N% 為所有裝備武器加總後不能超過N% 超過則視同N%
-   -  attack: 10 #攻擊力(通用)(常數)
-   -  attack_speed: 10 #攻擊速度(近戰/魔法)(常數)
-   -  piercing: 10 #真實傷害(近戰/射擊限定)(常數)
+   -  attack: 10 #攻擊力(通用)(常數) generic.attack_damage
+   -  attack_speed: 10 #攻擊速度(近戰/魔法)(常數) generic.attack_speed
+   -  piercing: 10 #真實傷害(近戰/射擊限定)(常數) 
    -  magic: 10 #魔法傷害(魔法限定)(常數)
-   -  shoot: 10 #遠程傷害(射擊/魔法限定)(常數)
+   -  shoot: 10 #遠程傷害(射擊/魔法限定)(常數) generic.attak_damage (addition for shoot and magic)
    -  range: 10 #魔法射程(魔法限定)(常數)
    -  mana_cost: 10 #魔力消耗(通用)(常數)
    -  critical_chance: 10 #爆擊機率(通用)(百分比)
