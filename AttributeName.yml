@@ -14,6 +14,7 @@ attribute: #名稱定義
    nether: §r䄀 地獄生物傷害
    water: §r䄅 水中生物傷害
    player: §r䄵 對玩家傷害
+   # Finished
    drain_chance: §r䄛 吸血機率
    drain_rate: §r䅁 吸血倍率
    light_chance: §r䄗 喚雷機率

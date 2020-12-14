@@ -51,7 +51,7 @@ public class CommandAttributeGUI implements CommandExecutor {
 								// sender.sendMessage("[Debug] Locate Size "+formatter.format(i)+":
 								// "+locate.size());
 								String name = ic.gem_com_config.getString("locate" + formatter.format(i) + ".Name");
-								String use = ic.gem_com_config.getString("locate" + formatter.format(i) + ".Use");
+								ic.gem_com_config.getString("locate" + formatter.format(i) + ".Use");
 								ItemStack mat = new ItemStack(Material
 										.matchMaterial(ic.gem_com_config.getString("locate" + formatter.format(i) + ".Material")));
 								List<String> lore = (List<String>) ic.gem_com_config

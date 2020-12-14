@@ -205,6 +205,56 @@ public class IceLegend extends JavaPlugin implements Listener {
 				break;
 			case "poison_chance":
 				break;
+			case "poison_damage":
+				break;
+			case "confuse_chance":
+				break;
+			case "float_chance":
+				break;
+			case "float_level":
+				break;
+			case "burn_chance":
+				break;
+			case "freeze_time":
+				break;
+			case "armor":
+				break;
+			case "armour_toughness":
+				break;
+			case "mana":
+				break;
+			case "health":
+				break;
+			case "rebound_chance":
+				break;
+			case "rebound_rate":
+				break;
+			case "physic_defence":
+				break;
+			case "magic_defence":
+				break;
+			case "undead_defence":
+				break;
+			case "water_defence":
+				break;
+			case "mob_defence":
+				break;
+			case "player_defence":
+				break;
+			case "arthropod_defence":
+				break;
+			case "light_defence":
+				break;
+			case "slow_defence":
+				break;
+			case "poison_defence":
+				break;
+			case "burn_dfence":
+				break;
+			case "flaot_defence":
+				break;
+			case "freeze_defence":
+				break;
 			
 			}
 		}
@@ -224,7 +274,6 @@ public class IceLegend extends JavaPlugin implements Listener {
 			Map<Attribute, Collection<AttributeModifier>> attr = item.getItemMeta().getAttributeModifiers().asMap();
 			Map<String,Double> name_list = new HashMap<String,Double>();
 			for (Entry<Attribute, Collection<AttributeModifier>> entry:attr.entrySet()) {
-				//String name = entry.getKey().name();
 				Iterator value = entry.getValue().iterator();
 				for(AttributeModifier am: item.getItemMeta().getAttributeModifiers(entry.getKey())) {
 					double v = am.getAmount();

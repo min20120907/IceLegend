@@ -1,14 +1,11 @@
 package com.icelegend;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
-import org.bukkit.event.Listener;
-import org.bukkit.event.server.TabCompleteEvent;
 
 public class TabComEvent implements TabCompleter {
 	IceLegend ic;

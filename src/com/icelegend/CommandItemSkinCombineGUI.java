@@ -55,7 +55,7 @@ public class CommandItemSkinCombineGUI implements CommandExecutor {
 					// sender.sendMessage("[Debug] Locate Size "+formatter.format(i)+":
 					// "+locate.size());
 					String name = ic.item_skin_com_config.getString("locate" + formatter.format(i) + ".Name");
-					String use = ic.item_skin_com_config.getString("locate" + formatter.format(i) + ".Use");
+					ic.item_skin_com_config.getString("locate" + formatter.format(i) + ".Use");
 					ItemStack mat = new ItemStack(Material.matchMaterial(
 							ic.item_skin_com_config.getString("locate" + formatter.format(i) + ".Material")));
 					List<String> lore = (List<String>) ic.item_skin_com_config

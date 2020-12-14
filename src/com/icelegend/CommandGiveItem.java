@@ -1,7 +1,5 @@
 package com.icelegend;
 
-import java.text.DecimalFormat;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;

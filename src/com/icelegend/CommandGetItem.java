@@ -17,7 +17,7 @@ public class CommandGetItem implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// TODO Auto-generated method stub
 		Player p = (Player) sender;
-		Player p2 = Bukkit.getPlayer(args[0]);
+		Bukkit.getPlayer(args[0]);
 		p.sendMessage(ic.msg_config.getString("Messages.getitem"));
 		return true;
 	}
