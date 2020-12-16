@@ -294,6 +294,7 @@ public class IceLegend extends JavaPlugin implements Listener {
 			double burn_rate=0.0;
 			double freeze_time=0.0;
 			double drain_rate=0.0;
+			double critical_rate=0.0;
 			for (Entry<String, Double> entry : name_list.entrySet()) {
 				Random r = new Random();
 				double v = entry.getValue();
@@ -311,8 +312,12 @@ public class IceLegend extends JavaPlugin implements Listener {
 				case "mana_cost":
 					break;
 				case "critical_chance":
+					if(r.nextDouble()<=v) {
+						event.setDamage(critical_rate);
+					}
 					break;
 				case "critical_rate":
+					critical_rate = v;
 					break;
 				// implemented below
 				case "arthropod":
