@@ -9,10 +9,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Random;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.attribute.AttributeModifier.Operation;
@@ -34,6 +37,8 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.entity.*;
 
 public class IceLegend extends JavaPlugin implements Listener {
@@ -266,6 +271,8 @@ public class IceLegend extends JavaPlugin implements Listener {
 	public void onEntityDamage(EntityDamageByEntityEvent event) {
 		Entity victim = event.getEntity();
 		Entity damager = event.getDamager();
+		World world = victim.getWorld();
+		Location location = victim.getLocation();
 		if (damager instanceof Player) {
 			Player p = (Player) damager;
 			ItemStack item = p.getInventory().getItemInMainHand();
@@ -280,9 +287,20 @@ public class IceLegend extends JavaPlugin implements Listener {
 					name_list.put(name, v);
 				}
 			}
+			int slow_rate = 1;
+			int poison_damage=1;
+			int confuse_level=1;
+			int float_level=1;
+			double burn_rate=0.0;
+			double freeze_time=0.0;
+			double drain_rate=0.0;
 			for (Entry<String, Double> entry : name_list.entrySet()) {
+				Random r = new Random();
+				double v = entry.getValue();
+				int dur = 100;
 				switch (entry.getKey()) {
 				case "piercing":
+					
 					break;
 				case "magic":
 					break;
@@ -296,6 +314,7 @@ public class IceLegend extends JavaPlugin implements Listener {
 					break;
 				case "critical_rate":
 					break;
+				// implemented below
 				case "arthropod":
 					break;
 				case "mob":
@@ -306,28 +325,47 @@ public class IceLegend extends JavaPlugin implements Listener {
 					break;
 				case "player":
 					break;
+				// implemented above
 				case "drain_chance":
 					break;
 				case "drain_rate":
 					break;
 				case "light_chance":
+					if(r.nextDouble()<=v)
+						world.strikeLightning(location);
 					break;
 				case "light_damage":
 					break;
-				case "slow_chance":
-					break;
 				case "slow_rate":
+					slow_rate= (int) v;
+				case "slow_chance":
+					if(r.nextDouble() <= v) {
+						((LivingEntity) victim).addPotionEffect(new PotionEffect(PotionEffectType.SLOW, dur, slow_rate));
+					}
 					break;
+				
 				case "poison_chance":
+					if(r.nextDouble() <= v) {
+						((LivingEntity) victim).addPotionEffect(new PotionEffect(PotionEffectType.POISON, dur, poison_damage));
+					}
 					break;
 				case "poison_damage":
+					poison_damage = (int) v;
 					break;
 				case "confuse_chance":
-					break;
-				case "float_chance":
+					if(r.nextDouble() <= v) {
+						((LivingEntity) victim).addPotionEffect(new PotionEffect(PotionEffectType.CONFUSION, dur, confuse_level));
+					}
 					break;
 				case "float_level":
+					float_level = (int) v;
 					break;
+				case "float_chance":
+					if(r.nextDouble() <= v) {
+						((LivingEntity) victim).addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, dur, float_level));
+					}
+					break;
+				
 				case "burn_chance":
 					break;
 				case "freeze_time":
@@ -385,10 +423,9 @@ public class IceLegend extends JavaPlugin implements Listener {
 						event.setDamage(event.getDamage() + entry.getValue());
 			} else if (victim instanceof Player) { // Player
 
-				for (Entry<String, Double> entry : name_list.entrySet()) {
+				for (Entry<String, Double> entry : name_list.entrySet()) 
 					if (entry.getKey().equals("player"))
 						event.setDamage(event.getDamage() + entry.getValue());
-				}
 			} else if (victim instanceof LivingEntity) {
 				LivingEntity v = (LivingEntity) victim;
 				if (v.getCategory().equals(EntityCategory.ARTHROPOD)) { // Arthropod
