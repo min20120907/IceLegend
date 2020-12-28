@@ -15,6 +15,7 @@ import java.util.UUID;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -35,6 +36,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerItemHeldEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffect;
@@ -254,9 +256,9 @@ public class IceLegend extends JavaPlugin implements Listener {
 				break;
 			case "poison_defence":
 				break;
-			case "burn_dfence":
+			case "burn_desfence":
 				break;
-			case "flaot_defence":
+			case "float_defence":
 				break;
 			case "freeze_defence":
 				break;
@@ -276,7 +278,7 @@ public class IceLegend extends JavaPlugin implements Listener {
 		if (damager instanceof Player) {
 			Player p = (Player) damager;
 			ItemStack item = p.getInventory().getItemInMainHand();
-
+			
 			Map<Attribute, Collection<AttributeModifier>> attr = item.getItemMeta().getAttributeModifiers().asMap();
 			Map<String, Double> name_list = new HashMap<String, Double>();
 			for (Entry<Attribute, Collection<AttributeModifier>> entry : attr.entrySet()) {
@@ -306,6 +308,10 @@ public class IceLegend extends JavaPlugin implements Listener {
 				case "magic":
 					break;
 				case "shoot":
+					if(((Player) damager).getInventory().getItemInMainHand().equals(new ItemStack(Material.BOW) )||
+							((Player) damager).getInventory().getItemInMainHand().equals(new ItemStack(Material.CROSSBOW))){
+						event.setDamage(event.getDamage()+v);
+					}
 					break;
 				case "range":
 					break;
@@ -313,24 +319,12 @@ public class IceLegend extends JavaPlugin implements Listener {
 					break;
 				case "critical_chance":
 					if(r.nextDouble()<=v) {
-						event.setDamage(critical_rate);
+						event.setDamage(critical_rate+event.getDamage());
 					}
 					break;
 				case "critical_rate":
 					critical_rate = v;
 					break;
-				// implemented below
-				case "arthropod":
-					break;
-				case "mob":
-					break;
-				case "nether":
-					break;
-				case "water":
-					break;
-				case "player":
-					break;
-				// implemented above
 				case "drain_chance":
 					break;
 				case "drain_rate":
@@ -372,18 +366,43 @@ public class IceLegend extends JavaPlugin implements Listener {
 					break;
 				
 				case "burn_chance":
+					if(r.nextDouble() <= v) {
+						int burn_dur = 3*20; // 3 sec
+						victim.setFireTicks(burn_dur);
+					}
 					break;
 				case "freeze_time":
+					
 					break;
 				case "armor":
+					PlayerInventory inv = ((Player) damager).getInventory();
+					ItemStack armour[] = inv.getArmorContents();
+					for (ItemStack a : armour) {
+						ItemMeta im = a.getItemMeta();
+						AttributeModifier mod = new AttributeModifier(UUID.randomUUID(), entry.getKey(),
+								components_yml_config.getDouble(""+entry.getKey()), Operation.ADD_NUMBER, EquipmentSlot.HAND);
+						im.addAttributeModifier(Attribute.GENERIC_ARMOR, mod);
+						a.setItemMeta(im);
+					}
 					break;
 				case "armour_toughness":
+					inv = ((Player) damager).getInventory();
+					armour = inv.getArmorContents();
+					for (ItemStack a : armour) {
+						ItemMeta im = a.getItemMeta();
+						AttributeModifier mod = new AttributeModifier(UUID.randomUUID(), entry.getKey(),
+								components_yml_config.getDouble(""+entry.getKey()), Operation.ADD_NUMBER, EquipmentSlot.HAND);
+						im.addAttributeModifier(Attribute.GENERIC_ARMOR_TOUGHNESS, mod);
+						a.setItemMeta(im);
+					}
 					break;
 				case "mana":
 					break;
-				case "health":
+				case "health":nv = ((Player) damager).getInventory();
+				armour = inv.getArmorContents();
 					break;
 				case "rebound_chance":
+					
 					break;
 				case "rebound_rate":
 					break;
