@@ -398,8 +398,9 @@ public class IceLegend extends JavaPlugin implements Listener {
 					break;
 				case "mana":
 					break;
-				case "health":nv = ((Player) damager).getInventory();
-				armour = inv.getArmorContents();
+				case "health":
+					inv = ((Player) damager).getInventory();
+					armour = inv.getArmorContents();
 					break;
 				case "rebound_chance":
 					
