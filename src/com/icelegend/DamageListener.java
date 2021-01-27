@@ -52,6 +52,7 @@ public class DamageListener implements Listener {
 		Player p = event.getPlayer();
 		ItemStack item = p.getInventory().getItem(event.getNewSlot());
 		ItemMeta im = item.getItemMeta();
+		
 		List<String> attr_list = (List<String>) ic.attr_name_config.getList("attribute");
 
 		for (String s : attr_list) {

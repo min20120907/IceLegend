@@ -1,7 +1,9 @@
 package com.icelegend;
 
 import java.awt.Image;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
@@ -47,10 +49,11 @@ public class CommandGiveCom implements CommandExecutor {
 		im.setCustomModelData(Integer.parseInt(ic.components_yml_config.getString(destItem + ".Data")));
 		Damageable dm = (Damageable) im;
 		dm.setDamage(Integer.parseInt(ic.components_yml_config.getString(destItem + ".Durability")));
-		List<String> attr_list = (List<String>) ic.components_yml_config.getList(destItem+".Attribute");
-		for(String s : attr_list) {
-			AttributeModifier mod = new AttributeModifier(UUID.randomUUID(), s,
-					ic.components_yml_config.getDouble(destItem+"." + s), Operation.ADD_NUMBER, EquipmentSlot.HAND);
+		List<Map<?,?>> attr_list = ic.components_yml_config.getMapList(destItem+".Attribute");
+		for(Map m : attr_list) {
+
+			AttributeModifier mod = new AttributeModifier(UUID.randomUUID(), (String)m.keySet().toArray()[0],
+					Double.valueOf( String.valueOf(m.get(m.keySet().toArray()[0]))), Operation.ADD_NUMBER, EquipmentSlot.HAND);
 			im.addAttributeModifier(Attribute.GENERIC_FLYING_SPEED, mod);
 		}
 		// apply the color format
