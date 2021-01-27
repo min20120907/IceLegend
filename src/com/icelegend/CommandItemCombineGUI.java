@@ -71,7 +71,6 @@ public class CommandItemCombineGUI implements CommandExecutor {
 				// give item to gui
 				gui.setItem(locate.get(j), mat);
 			}
-
 			i++;
 		}
 		// open gui to the user

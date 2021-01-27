@@ -47,7 +47,7 @@ public class CommandGiveItem implements CommandExecutor {
 					Damageable dm = (Damageable) im;
 					dm.setDamage(Integer
 							.parseInt(ic.item_mat_config.getString("Type." + com + "." + count + ".Durability")));
-
+					
 					item.setItemMeta((ItemMeta) dm);
 					i = item;
 					break;
