@@ -1,5 +1,7 @@
 package com.icelegend;
 
+import java.util.List;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -12,6 +14,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 public class CommandGiveCom implements CommandExecutor {
 	IceLegend ic;
+
 	public CommandGiveCom(IceLegend ic) {
 		this.ic = ic;
 		// TODO Auto-generated constructor stub
@@ -20,47 +23,30 @@ public class CommandGiveCom implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		// TODO Auto-generated method stub
-				Player p = (Player) sender;
-				Player p2 = Bukkit.getPlayer(args[0]);
-				String destItem = args[1];
-				int count = 1;
-				ItemStack i = new ItemStack(Material.AIR);
-				p.sendMessage("Comlist:");
+		Player p = (Player) sender;
+		Player p2 = Bukkit.getPlayer(args[0]);
+		String destItem = args[1];
+		if(ic.item_com_config.getString(destItem).equals(null)) {
+			p.sendMessage(ic.format("Target component is not found"));
+			return true;
+		}
 
-				for (String com : ic.ComponentType) {
+		List<String> lore = (List<String>) ic.item_com_config.getList(("Lore"));
+		ItemStack item = new ItemStack(Material.matchMaterial(ic.item_com_config.getString(destItem + ".Material")));
+		p.sendMessage(item.toString());
+		p.sendMessage("args1: " + args[1]);
 
-					while (ic.item_com_config.getString("Type." + com + "." + count + ".material") != null) {
+		ItemMeta im = item.getItemMeta();
+		im.setCustomModelData(Integer.parseInt(ic.item_com_config.getString(destItem + ".Data")));
+		Damageable dm = (Damageable) im;
+		dm.setDamage(Integer.parseInt(ic.item_com_config.getString(destItem + ".Durability")));
+		
+		item.setItemMeta((ItemMeta) dm);
+		p.sendMessage("--------END OF COM--------");
+		p2.getInventory().addItem(item);
 
-						ItemStack item = new ItemStack(Material
-								.matchMaterial(ic.item_com_config.getString("Type." + com + "." + count + ".material")));
-						p.sendMessage(item.toString());
-						p.sendMessage(com);
-						p.sendMessage("args1: "+args[1]);
-						if (Integer.parseInt(destItem)==count) {
-
-							ItemMeta im = item.getItemMeta();
-							im.setUnbreakable(Boolean.parseBoolean(ic.item_com_config
-									.getString(ic.item_com_config.getString("Type." + com + "." + count + ".Unbreakable"))));
-							im.setCustomModelData(
-									Integer.parseInt(ic.item_com_config.getString("Type." + com + "." + count + ".Data")));
-							Damageable dm = (Damageable) im;
-							dm.setDamage(Integer
-									.parseInt(ic.item_com_config.getString("Type." + com + "." + count + ".Durability")));
-							
-							item.setItemMeta((ItemMeta) dm);
-							i = item;
-							break;
-						}
-						count++;
-					}
-				}
-				p.sendMessage("--------END OF COM--------");
-				if (!i.equals(new ItemStack(Material.AIR)))
-					p2.getInventory().addItem(i);
-				else
-					p.sendMessage("NO ITEM");
-				p.sendMessage(ic.format(ic.msg_config.getString("Messages.giveitem")));
-				return true;
+		p.sendMessage(ic.format(ic.msg_config.getString("Messages.giveitem")));
+		return true;
 	}
 
 }
