@@ -272,6 +272,7 @@ public class DamageListener implements Listener {
 					ItemStack armour[] = inv.getArmorContents();
 					for (ItemStack a : armour) {
 						ItemMeta im = a.getItemMeta();
+						
 						AttributeModifier mod = new AttributeModifier(UUID.randomUUID(), entry.getKey(),
 								ic.components_yml_config.getDouble(""+entry.getKey()), Operation.ADD_NUMBER, EquipmentSlot.HAND);
 						im.addAttributeModifier(Attribute.GENERIC_ARMOR, mod);
