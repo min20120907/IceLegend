@@ -87,3 +87,7 @@ commands:
       description: give specific skin
       usage: /<command>
       permission: IceLegend.command.giveskin
+   givecom:
+      description: give specific component
+      usage: /<command>
+      permission: IceLegend.command.givecom

@@ -152,6 +152,7 @@ public class IceLegend extends JavaPlugin implements Listener {
 		this.getCommand("givegem").setExecutor(new CommandGiveGem(this));
 		this.getCommand("givemana").setExecutor(new CommandGiveMana(this));
 		this.getCommand("giveskin").setExecutor(new CommandGiveSkin(this));
+		this.getCommand("givecom").setExecutor(new CommandGiveCom(this));
 		// Register the clicker event to the plugin.
 		Bukkit.getPluginManager().registerEvents(new ClickerEvent(this), this);
 		Bukkit.getPluginManager().registerEvents(new DamageListener(this), this);
