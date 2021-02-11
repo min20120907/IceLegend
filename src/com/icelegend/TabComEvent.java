@@ -6,9 +6,10 @@ import java.util.List;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabCompleter;
+import org.jetbrains.annotations.NotNull;
 
 public class TabComEvent implements TabCompleter {
-	IceLegend ic;
+	final IceLegend ic;
 
 	public TabComEvent(IceLegend ic) {
 		// TODO Auto-generated constructor stub
@@ -16,7 +17,7 @@ public class TabComEvent implements TabCompleter {
 	}
 
 	@Override
-	public List<String> onTabComplete(CommandSender sender, Command cmd, String label, String[] args) {
+	public List<String> onTabComplete(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, @NotNull String[] args) {
 		// TODO Auto-generated method stub
 		if (cmd.getName().equalsIgnoreCase("icelegend")) {
 			if (args.length == 1) {

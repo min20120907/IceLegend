@@ -9,9 +9,12 @@ import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 public class CommandGiveItem implements CommandExecutor {
-	IceLegend ic;
+	final IceLegend ic;
 
 	public CommandGiveItem(IceLegend ic) {
 		// TODO Auto-generated constructor stub
@@ -19,7 +22,7 @@ public class CommandGiveItem implements CommandExecutor {
 	}
 
 	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, String[] args) {
 		// TODO Auto-generated method stub
 		Player p = (Player) sender;
 		Player p2 = Bukkit.getPlayer(args[0]);
@@ -32,21 +35,22 @@ public class CommandGiveItem implements CommandExecutor {
 
 			while (ic.item_mat_config.getString("Type." + com + "." + count + ".material") != null) {
 
-				ItemStack item = new ItemStack(Material
-						.matchMaterial(ic.item_mat_config.getString("Type." + com + "." + count + ".material")));
+				ItemStack item = new ItemStack(Objects.requireNonNull(Material
+						.matchMaterial(Objects.requireNonNull(ic.item_mat_config.getString("Type." + com + "." + count + ".material")))));
 				p.sendMessage(item.toString());
 				p.sendMessage(com);
 				p.sendMessage("args1: "+args[1]);
 				if (Integer.parseInt(destItem)==count) {
 
 					ItemMeta im = item.getItemMeta();
+					assert im != null;
 					im.setUnbreakable(Boolean.parseBoolean(ic.item_mat_config
-							.getString(ic.item_mat_config.getString("Type." + com + "." + count + ".Unbreakable"))));
+							.getString(Objects.requireNonNull(ic.item_mat_config.getString("Type." + com + "." + count + ".Unbreakable")))));
 					im.setCustomModelData(
-							Integer.parseInt(ic.item_mat_config.getString("Type." + com + "." + count + ".Data")));
+							Integer.parseInt(Objects.requireNonNull(ic.item_mat_config.getString("Type." + com + "." + count + ".Data"))));
 					Damageable dm = (Damageable) im;
 					dm.setDamage(Integer
-							.parseInt(ic.item_mat_config.getString("Type." + com + "." + count + ".Durability")));
+							.parseInt(Objects.requireNonNull(ic.item_mat_config.getString("Type." + com + "." + count + ".Durability"))));
 					
 					item.setItemMeta((ItemMeta) dm);
 					i = item;
@@ -56,11 +60,13 @@ public class CommandGiveItem implements CommandExecutor {
 			}
 		}
 		p.sendMessage("--------END OF COM--------");
-		if (!i.equals(new ItemStack(Material.AIR)))
+		if (!i.equals(new ItemStack(Material.AIR))) {
+			assert p2 != null;
 			p2.getInventory().addItem(i);
+		}
 		else
 			p.sendMessage("NO ITEM");
-		p.sendMessage(ic.format(ic.msg_config.getString("Messages.giveitem")));
+		p.sendMessage(ic.format(Objects.requireNonNull(ic.msg_config.getString("Messages.giveitem"))));
 		return true;
 	}
 

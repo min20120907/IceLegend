@@ -5,20 +5,23 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 public class CommandGetGem implements CommandExecutor {
-	IceLegend ic;
+	final IceLegend ic;
 	public CommandGetGem(IceLegend ic) {
 		// TODO Auto-generated constructor stub
 		this.ic = ic;
 	}
 
 	@Override
-	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+	public boolean onCommand(@NotNull CommandSender sender, @NotNull Command cmd, @NotNull String label, String[] args) {
 		// TODO Auto-generated method stub
 		Player p = (Player) sender;
 		Bukkit.getPlayer(args[0]);
-		p.sendMessage(ic.msg_config.getString("Messages.getgem"));
+		p.sendMessage(Objects.requireNonNull(ic.msg_config.getString("Messages.getgem")));
 		return true;
 	}
 }
