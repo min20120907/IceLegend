@@ -4,6 +4,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -44,12 +45,12 @@ public abstract class CommandBase<P extends Plugin> implements CommandExecutor {
      * @param subCommand The sub command to register which can either be a plain CommandExecutor or another
      *                   CommandBase if further command nesting is desired.
      */
-    public void registerSubCommand(String label, CommandExecutor subCommand) {
+    public void registerSubCommand(@NotNull String label, CommandExecutor subCommand) {
         subCommands.put(label.toLowerCase(), subCommand);
     }
 
     @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+    public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, @NotNull String[] args) {
     	
         if (args.length > 0) {
             CommandExecutor child = subCommands.get(args[0].toLowerCase());
